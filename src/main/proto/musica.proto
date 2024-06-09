@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.pedror.grpc";
+option java_outer_classname = "MusicasGrpcProto";
+
+package musica;
+
+service MusicaService {
+  rpc GetUsuarios (Vazio) returns (GetUsuariosResposta) {
+  }
+
+  rpc GetMusicas (Vazio) returns (GetMusicasResposta) {
+  }
+
+  rpc GetPlaylistsDoUsuario (GetPlaylistsDoUsuarioRequisicao) returns (GetPlaylistDoUsuarioResposta) {
+  }
+
+  rpc GetMusicasDaPlaylist (GetMusicasDaPlaylistRequisicao) returns (GetMusicasDaPlaylistResposta) {
+  }
+
+  rpc GetPlaylistsComMusica (GetPlaylistsComMusicaRequisicao) returns (GetPlaylistsComMusicaResposta) {
+  }
+}
+
+message Vazio {}
+
+message UsuarioGrpc {
+  int32 id = 1;
+  string nome = 2;
+  int32 idade = 3;
+  repeated PlaylistGrpc playlists = 4;
+}
+
+message MusicaGrpc {
+  int32 id = 1;
+  string nome = 2;
+  string artista = 3;
+}
+
+message PlaylistGrpc {
+  int32 id = 1;
+  string nome = 2;
+  repeated MusicaGrpc musicas = 4;
+}
+
+message GetUsuariosResposta {
+  repeated UsuarioGrpc usuarios = 1;
+}
+
+message GetMusicasResposta {
+  repeated MusicaGrpc musicas = 1;
+}
+
+message GetPlaylistsDoUsuarioRequisicao {
+  int32 idUsuario = 1;
+}
+
+message GetPlaylistDoUsuarioResposta {
+  repeated PlaylistGrpc playlists = 1;
+}
+
+message GetMusicasDaPlaylistRequisicao {
+  int32 idPlaylist = 1;
+}
+
+message GetMusicasDaPlaylistResposta {
+  repeated MusicaGrpc musicas = 1;
+}
+
+message GetPlaylistsComMusicaRequisicao {
+  int32 idMusica = 1;
+}
+
+message GetPlaylistsComMusicaResposta {
+  repeated PlaylistGrpc playlists = 1;
+}
