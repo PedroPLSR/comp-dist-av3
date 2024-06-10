@@ -92,32 +92,49 @@ public class Dados {
 
   //Codigo para o CRUD
   //Create
-  public void createMusica(String nome, String artista){
+  public Musica createMusica(String nome, String artista){
     Musica musica = new Musica();
     musica.setNome(nome);
     musica.setArtista(artista);
-    musica.setId(getMusicas().getLast().getId() + 1); //setando pra ser o ultimo + 1
+    musica.setId(getMusicas().get(getMusicas().size() - 1).getId() + 1); //setando pra ser o ultimo + 1
     getMusicas().add(musica);
+    return musica;
   }
-  public void createUsuario(String nome, int idade, List<Playlist> playlists){
+  public Usuario createUsuario(String nome, int idade, int[] idPlaylists){
     Usuario usuario = new Usuario();
     usuario.setNome(nome);
     usuario.setIdade(idade);
-    usuario.setPlaylists(playlists);
-    usuario.setId(getUsuarios().getLast().getId() + 1); //setando pra ser o ultimo + 1
+    List<Playlist> list = new ArrayList<>();
+    for(int id : idPlaylists){
+      for(Playlist playlist : getPlaylists()){
+        if(playlist.getId() == (long) id){
+          list.add(playlist);
+          break;
+        }
+      }
+    }
+    usuario.setPlaylists(list);
+    usuario.setId(getUsuarios().get(getUsuarios().size() - 1).getId() + 1); //setando pra ser o ultimo + 1
     getUsuarios().add(usuario);
+    return usuario;
   }
 
-  public void createPlaylist(String nome, int... idMusicas){ //int... aceita um conjunto de ids pra colocar na playlist
+  public Playlist createPlaylist(String nome, int[] idMusicas){ //int... aceita um conjunto de ids pra colocar na playlist
     Playlist playlist = new Playlist();
     playlist.setNome(nome);
     List<Musica> list = new ArrayList<>();
     for (int id : idMusicas) {
-      list.add(getMusicas().get(id));
+      for(Musica musica : getMusicas()){
+        if(musica.getId() == (long) id){
+          list.add(musica);
+          break;
+        }
+      }
     }
     playlist.setMusicas(list);
-    playlist.setId(getPlaylists().getLast().getId() + 1);
+    playlist.setId(getPlaylists().get(getPlaylists().size() - 1).getId() + 1);
     getPlaylists().add(playlist);
+    return playlist;
   }
 
   //Read depende de cada api..
@@ -126,6 +143,7 @@ public class Dados {
   public void updateMusica(long idMusica, Musica newMusica){
     for(Musica musica : getMusicas()){
       if(musica.getId().equals(idMusica)){
+        newMusica.setId(musica.getId()); //Manter o mesmo ID da musica anterior
         getMusicas().set(getMusicas().indexOf(musica), newMusica);
         break;
       }
@@ -135,6 +153,7 @@ public class Dados {
   public void updateUsuario(long idUsuario, Usuario newUsuario){
     for(Usuario usuario : getUsuarios()){
       if(usuario.getId().equals(idUsuario)){
+        newUsuario.setId(usuario.getId()); //Manter o mesmo ID do usuario anterior
         getUsuarios().set(getUsuarios().indexOf(usuario), newUsuario);
         break;
       }
@@ -144,6 +163,7 @@ public class Dados {
   public void updatePlaylist(long idPlaylist, Playlist newPlaylist){
     for(Playlist playlist : getPlaylists()){
       if(playlist.getId().equals(idPlaylist)){
+        newPlaylist.setId(playlist.getId());
         getPlaylists().set(getPlaylists().indexOf(playlist), newPlaylist);
         break;
       }
@@ -152,28 +172,31 @@ public class Dados {
 
   //Remove
 
-  public void removeMusic(long idMusica){
+  public String removeMusic(long idMusica){
     for(Musica musica : getMusicas()){
       if(musica.getId().equals(idMusica)){
         getMusicas().remove(getMusicas().indexOf(musica));
-        break;
+        return "Musica deletada.";
       }
     }
+    return "Musica nao encontrada.";
   }
-  public void removeUsuario(long idUsuario){
+  public String removeUsuario(long idUsuario){
     for(Usuario usuario : getUsuarios()){
       if(usuario.getId().equals(idUsuario)){
         getUsuarios().remove(getMusicas().indexOf(usuario));
-        break;
+        return "Usuario deletado.";
       }
     }
+    return "Usuario nao encontrado.";
   }
-  public void removePlaylist(long idPlaylist){
+  public String removePlaylist(long idPlaylist){
     for(Playlist playlist : getPlaylists()){
       if(playlist.getId().equals(idPlaylist)){
         getPlaylists().remove(getMusicas().indexOf(playlist));
-        break;
+        return  "Playlist deletada.";
       }
     }
+    return "Playlist nao encontrada.";
   }
 }
