@@ -50,11 +50,11 @@ public class MusicaGrpcService implements MusicaService {
 
     for (Musica musica : dados.getMusicas()) {
       MusicaGrpc usuarioGrpc =
-        MusicaGrpc.newBuilder()
-                  .setId(musica.getIntId())
-                  .setNome(musica.getNome())
-                  .setArtista(musica.getArtista())
-                  .build();
+              MusicaGrpc.newBuilder()
+                      .setId(musica.getIntId())
+                      .setNome(musica.getNome())
+                      .setArtista(musica.getArtista())
+                      .build();
       musicasResposta.add(usuarioGrpc);
     }
     return Uni.createFrom().item(GetMusicasResposta.newBuilder().addAllMusicas(musicasResposta).build());
@@ -75,11 +75,11 @@ public class MusicaGrpcService implements MusicaService {
           }
 
           PlaylistGrpc playlistGrpc =
-            PlaylistGrpc.newBuilder()
-                        .setId(Math.toIntExact(playlist.getId()))
-                        .setNome(playlist.getNome())
-                        .addAllMusicas(musicas)
-                        .build();
+                  PlaylistGrpc.newBuilder()
+                          .setId(Math.toIntExact(playlist.getId()))
+                          .setNome(playlist.getNome())
+                          .addAllMusicas(musicas)
+                          .build();
           playlistUsuarios.add(playlistGrpc);
         }
 
@@ -124,11 +124,11 @@ public class MusicaGrpcService implements MusicaService {
           }
 
           PlaylistGrpc playlistGrpc =
-            PlaylistGrpc.newBuilder()
-                        .setId(playlist.getIntId())
-                        .setNome(playlist.getNome())
-                        .addAllMusicas(musicas)
-                        .build();
+                  PlaylistGrpc.newBuilder()
+                          .setId(playlist.getIntId())
+                          .setNome(playlist.getNome())
+                          .addAllMusicas(musicas)
+                          .build();
           playlists.add(playlistGrpc);
 
           break;
