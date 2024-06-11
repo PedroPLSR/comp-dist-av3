@@ -9,7 +9,6 @@ import jdk.jfr.Description;
 import org.eclipse.microprofile.graphql.GraphQLApi;
 import org.eclipse.microprofile.graphql.Mutation;
 import org.eclipse.microprofile.graphql.Query;
-import org.jboss.logging.annotations.Param;
 
 import java.util.List;
 
@@ -94,7 +93,7 @@ public class MusicaGraphQLService {
   @Mutation
   @Description("Deleta uma Musica")
   public String deleteMusica(long idMusica){
-     return dados.removeMusic(idMusica);
+     return dados.removeMusica(idMusica);
   }
   @Mutation
   @Description("Deleta uma Playlist")
