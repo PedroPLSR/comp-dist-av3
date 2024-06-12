@@ -217,29 +217,44 @@ public class Dados {
   //Remove
 
   public String removeMusica(long idMusica){
+    Musica musicaRemovida = null;
     for(Musica musica : getMusicas()){
       if(musica.getId().equals(idMusica)){
-        getMusicas().remove(getMusicas().indexOf(musica));
-        return "Musica deletada.";
+        musicaRemovida = musica;
+        break;
       }
+    }
+    if(musicaRemovida != null){
+      getMusicas().remove(musicaRemovida);
+      return "Musica deletada.";
     }
     return "Musica nao encontrada.";
   }
   public String removeUsuario(long idUsuario){
+    Usuario usuarioRemovido = null;
     for(Usuario usuario : getUsuarios()){
       if(usuario.getId().equals(idUsuario)){
-        getUsuarios().remove(getMusicas().indexOf(usuario));
-        return "Usuario deletado.";
+        usuarioRemovido = usuario;
+        break;
       }
+    }
+    if(usuarioRemovido != null){
+      getUsuarios().remove(usuarioRemovido);
+      return "Usuario deletado.";
     }
     return "Usuario nao encontrado.";
   }
   public String removePlaylist(long idPlaylist){
+    Playlist playlistRemovida = null;
     for(Playlist playlist : getPlaylists()){
       if(playlist.getId().equals(idPlaylist)){
-        getPlaylists().remove(getMusicas().indexOf(playlist));
-        return  "Playlist deletada.";
+        playlistRemovida = playlist;
+        break;
       }
+    }
+    if(playlistRemovida != null){
+      getPlaylists().remove(playlistRemovida);
+      return "Playlist deletada.";
     }
     return "Playlist nao encontrada.";
   }

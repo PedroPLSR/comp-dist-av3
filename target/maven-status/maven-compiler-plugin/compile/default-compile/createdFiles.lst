@@ -31,6 +31,8 @@ com\pedror\grpc\UsuarioGrpc$1.class
 com\pedror\grpc\MusicaService.class
 com\pedror\grpc\MusicaServiceBean.class
 com\pedror\grpc\VazioOrBuilder.class
+com\pedror\dados\JSON_Objects$JSON_Musica.class
+com\pedror\dados\JSON_Objects$JSON_Playlist.class
 com\pedror\grpc\MusicaServiceGrpc$MusicaServiceFutureStub.class
 com\pedror\grpc\GetPlaylistsDoUsuarioRequisicao.class
 com\pedror\grpc\MusicaGrpc$Builder.class
@@ -43,12 +45,14 @@ com\pedror\grpc\GetPlaylistsDoUsuarioRequisicao$Builder.class
 com\pedror\grpc\MusicaGrpc$1.class
 com\pedror\grpc\GetPlaylistsComMusicaRequisicaoOrBuilder.class
 com\pedror\grpc\GetMusicasDaPlaylistRequisicao.class
+com\pedror\dados\JSON_Objects.class
 com\pedror\grpc\GetPlaylistsDoUsuarioRequisicaoOrBuilder.class
 com\pedror\MusicaGraphQLService.class
 com\pedror\grpc\MusicaGrpc.class
 com\pedror\grpc\GetPlaylistsComMusicaResposta$Builder.class
 com\pedror\grpc\GetPlaylistsComMusicaResposta$1.class
 com\pedror\grpc\MusicasGrpcProto.class
+com\pedror\dados\JSON_Objects$JSON_Usuario.class
 com\pedror\grpc\GetPlaylistDoUsuarioResposta.class
 com\pedror\grpc\GetUsuariosRespostaOrBuilder.class
 com\pedror\MusicaRestService.class

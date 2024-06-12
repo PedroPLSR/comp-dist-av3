@@ -21,6 +21,7 @@ public class MusicaRestService {
   public Usuario criarUsuario(JSON_Objects.JSON_Usuario usuario){
     return dados.createUsuario(usuario);
   }
+
   @POST
   @Consumes(MediaType.APPLICATION_JSON) //enviar um JSON com o objeto a ser criado (Nao vai ser considerado o ID no JSON, sendo criado um novo dentro do metodo)
   @Produces(MediaType.APPLICATION_JSON)
@@ -28,6 +29,7 @@ public class MusicaRestService {
   public Musica criarMusica(JSON_Objects.JSON_Musica musica){
     return dados.createMusica(musica);
   }
+
   @POST
   @Consumes(MediaType.APPLICATION_JSON) //enviar um JSON com o objeto a ser criado (Nao vai ser considerado o ID no JSON, sendo criado um novo dentro do metodo)
   @Produces(MediaType.APPLICATION_JSON)
@@ -35,6 +37,7 @@ public class MusicaRestService {
   public Playlist criarPlaylist(JSON_Objects.JSON_Playlist playlist){
     return dados.createPlaylist(playlist);
   }
+
   //Read --------------------------------------------------------------------------------------------------------------
   @GET
   @Produces(MediaType.APPLICATION_JSON)
@@ -72,21 +75,23 @@ public class MusicaRestService {
   }
 
   //Update ------------------------------------------------------------------------------------------------------------
-  @POST
+  @PUT
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/updateCliente/{idUsuario}")
   public void updateCliente(@PathParam("idUsuario") long idUsuario, JSON_Objects.JSON_Usuario usuario){
     dados.updateUsuario(idUsuario, dados.createUsuario(usuario));
   }
-  @POST
+
+  @PUT
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/updateMusica/{idMusica}")
   public void updateMusica(@PathParam("idMusica") long idMusica, JSON_Objects.JSON_Musica musica){
     dados.updateMusica(idMusica, dados.createMusica(musica));
   }
-  @POST
+
+  @PUT
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/updatePlaylist/{idPlaylist}")
@@ -95,21 +100,21 @@ public class MusicaRestService {
   }
 
   //Delete ------------------------------------------------------------------------------------------------------------
-  @POST
+  @DELETE
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/deletarCliente/{idUsuario}")
   public String deletarCliente(@PathParam("idUsuario") long idUsuario){
     return dados.removeUsuario(idUsuario);
   }
-  @POST
+  @DELETE
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/deletarMusica/{idMusica}")
   public String deletarMusica(@PathParam("idMusica") long idMusica){
     return dados.removeMusica(idMusica);
   }
-  @POST
+  @DELETE
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/deletarPlaylist/{idPlaylist}")

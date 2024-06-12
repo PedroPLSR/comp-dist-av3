@@ -5,4 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources" isTestSource="false" generated="true" />
     </content>
   </component>
+  <component name="FacetManager">
+    <facet type="Python" name="Python">
+      <configuration sdkName="Python 3.12 (nabor-av3)" />
+    </facet>
+  </component>
 </module>
