@@ -49,4 +49,49 @@ public class MusicaServiceClient implements MusicaService, MutinyClient<MutinyMu
     public io.smallrye.mutiny.Uni<com.pedror.grpc.GetPlaylistsComMusicaResposta> getPlaylistsComMusica(com.pedror.grpc.GetPlaylistsComMusicaRequisicao request) {
         return stub.getPlaylistsComMusica(request);
     }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.CriarUsuarioResposta> criarUsuario(com.pedror.grpc.CriarUsuarioRequisicao request) {
+        return stub.criarUsuario(request);
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.CriarMusicaResposta> criarMusica(com.pedror.grpc.CriarMusicaRequisicao request) {
+        return stub.criarMusica(request);
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.CriarPlaylistResposta> criarPlaylist(com.pedror.grpc.CriarPlaylistRequisicao request) {
+        return stub.criarPlaylist(request);
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.AtualizarUsuarioResposta> atualizarUsuario(com.pedror.grpc.AtualizarUsuarioRequisicao request) {
+        return stub.atualizarUsuario(request);
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.AtualizarMusicaResposta> atualizarMusica(com.pedror.grpc.AtualizarMusicaRequisicao request) {
+        return stub.atualizarMusica(request);
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.AtualizarPlaylistResposta> atualizarPlaylist(com.pedror.grpc.AtualizarPlaylistRequisicao request) {
+        return stub.atualizarPlaylist(request);
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.DeletarUsuarioResposta> deletarUsuario(com.pedror.grpc.DeletarUsuarioRequisicao request) {
+        return stub.deletarUsuario(request);
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.DeletarMusicaResposta> deletarMusica(com.pedror.grpc.DeletarMusicaRequisicao request) {
+        return stub.deletarMusica(request);
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.DeletarPlaylistResposta> deletarPlaylist(com.pedror.grpc.DeletarPlaylistRequisicao request) {
+        return stub.deletarPlaylist(request);
+    }
 }

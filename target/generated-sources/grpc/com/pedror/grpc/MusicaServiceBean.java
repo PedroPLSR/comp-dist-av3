@@ -57,4 +57,85 @@ public class MusicaServiceBean extends MutinyMusicaServiceGrpc.MusicaServiceImpl
             throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
         }
     }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.CriarUsuarioResposta> criarUsuario(com.pedror.grpc.CriarUsuarioRequisicao request) {
+        try {
+            return delegate.criarUsuario(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.CriarMusicaResposta> criarMusica(com.pedror.grpc.CriarMusicaRequisicao request) {
+        try {
+            return delegate.criarMusica(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.CriarPlaylistResposta> criarPlaylist(com.pedror.grpc.CriarPlaylistRequisicao request) {
+        try {
+            return delegate.criarPlaylist(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.AtualizarUsuarioResposta> atualizarUsuario(com.pedror.grpc.AtualizarUsuarioRequisicao request) {
+        try {
+            return delegate.atualizarUsuario(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.AtualizarMusicaResposta> atualizarMusica(com.pedror.grpc.AtualizarMusicaRequisicao request) {
+        try {
+            return delegate.atualizarMusica(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.AtualizarPlaylistResposta> atualizarPlaylist(com.pedror.grpc.AtualizarPlaylistRequisicao request) {
+        try {
+            return delegate.atualizarPlaylist(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.DeletarUsuarioResposta> deletarUsuario(com.pedror.grpc.DeletarUsuarioRequisicao request) {
+        try {
+            return delegate.deletarUsuario(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.DeletarMusicaResposta> deletarMusica(com.pedror.grpc.DeletarMusicaRequisicao request) {
+        try {
+            return delegate.deletarMusica(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
+
+    @Override
+    public io.smallrye.mutiny.Uni<com.pedror.grpc.DeletarPlaylistResposta> deletarPlaylist(com.pedror.grpc.DeletarPlaylistRequisicao request) {
+        try {
+            return delegate.deletarPlaylist(request);
+        } catch (UnsupportedOperationException e) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+    }
 }

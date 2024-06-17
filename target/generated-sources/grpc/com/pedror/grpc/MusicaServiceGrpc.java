@@ -89,6 +89,141 @@ public final class MusicaServiceGrpc {
         return getGetPlaylistsComMusicaMethod;
     }
 
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.CriarUsuarioRequisicao, com.pedror.grpc.CriarUsuarioResposta> getCriarUsuarioMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "CriarUsuario", requestType = com.pedror.grpc.CriarUsuarioRequisicao.class, responseType = com.pedror.grpc.CriarUsuarioResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.CriarUsuarioRequisicao, com.pedror.grpc.CriarUsuarioResposta> getCriarUsuarioMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.CriarUsuarioRequisicao, com.pedror.grpc.CriarUsuarioResposta> getCriarUsuarioMethod;
+        if ((getCriarUsuarioMethod = MusicaServiceGrpc.getCriarUsuarioMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getCriarUsuarioMethod = MusicaServiceGrpc.getCriarUsuarioMethod) == null) {
+                    MusicaServiceGrpc.getCriarUsuarioMethod = getCriarUsuarioMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.CriarUsuarioRequisicao, com.pedror.grpc.CriarUsuarioResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "CriarUsuario")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.CriarUsuarioRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.CriarUsuarioResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("CriarUsuario")).build();
+                }
+            }
+        }
+        return getCriarUsuarioMethod;
+    }
+
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.CriarMusicaRequisicao, com.pedror.grpc.CriarMusicaResposta> getCriarMusicaMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "CriarMusica", requestType = com.pedror.grpc.CriarMusicaRequisicao.class, responseType = com.pedror.grpc.CriarMusicaResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.CriarMusicaRequisicao, com.pedror.grpc.CriarMusicaResposta> getCriarMusicaMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.CriarMusicaRequisicao, com.pedror.grpc.CriarMusicaResposta> getCriarMusicaMethod;
+        if ((getCriarMusicaMethod = MusicaServiceGrpc.getCriarMusicaMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getCriarMusicaMethod = MusicaServiceGrpc.getCriarMusicaMethod) == null) {
+                    MusicaServiceGrpc.getCriarMusicaMethod = getCriarMusicaMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.CriarMusicaRequisicao, com.pedror.grpc.CriarMusicaResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "CriarMusica")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.CriarMusicaRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.CriarMusicaResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("CriarMusica")).build();
+                }
+            }
+        }
+        return getCriarMusicaMethod;
+    }
+
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.CriarPlaylistRequisicao, com.pedror.grpc.CriarPlaylistResposta> getCriarPlaylistMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "CriarPlaylist", requestType = com.pedror.grpc.CriarPlaylistRequisicao.class, responseType = com.pedror.grpc.CriarPlaylistResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.CriarPlaylistRequisicao, com.pedror.grpc.CriarPlaylistResposta> getCriarPlaylistMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.CriarPlaylistRequisicao, com.pedror.grpc.CriarPlaylistResposta> getCriarPlaylistMethod;
+        if ((getCriarPlaylistMethod = MusicaServiceGrpc.getCriarPlaylistMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getCriarPlaylistMethod = MusicaServiceGrpc.getCriarPlaylistMethod) == null) {
+                    MusicaServiceGrpc.getCriarPlaylistMethod = getCriarPlaylistMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.CriarPlaylistRequisicao, com.pedror.grpc.CriarPlaylistResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "CriarPlaylist")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.CriarPlaylistRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.CriarPlaylistResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("CriarPlaylist")).build();
+                }
+            }
+        }
+        return getCriarPlaylistMethod;
+    }
+
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarUsuarioRequisicao, com.pedror.grpc.AtualizarUsuarioResposta> getAtualizarUsuarioMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "AtualizarUsuario", requestType = com.pedror.grpc.AtualizarUsuarioRequisicao.class, responseType = com.pedror.grpc.AtualizarUsuarioResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarUsuarioRequisicao, com.pedror.grpc.AtualizarUsuarioResposta> getAtualizarUsuarioMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarUsuarioRequisicao, com.pedror.grpc.AtualizarUsuarioResposta> getAtualizarUsuarioMethod;
+        if ((getAtualizarUsuarioMethod = MusicaServiceGrpc.getAtualizarUsuarioMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getAtualizarUsuarioMethod = MusicaServiceGrpc.getAtualizarUsuarioMethod) == null) {
+                    MusicaServiceGrpc.getAtualizarUsuarioMethod = getAtualizarUsuarioMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.AtualizarUsuarioRequisicao, com.pedror.grpc.AtualizarUsuarioResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "AtualizarUsuario")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.AtualizarUsuarioRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.AtualizarUsuarioResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("AtualizarUsuario")).build();
+                }
+            }
+        }
+        return getAtualizarUsuarioMethod;
+    }
+
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarMusicaRequisicao, com.pedror.grpc.AtualizarMusicaResposta> getAtualizarMusicaMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "AtualizarMusica", requestType = com.pedror.grpc.AtualizarMusicaRequisicao.class, responseType = com.pedror.grpc.AtualizarMusicaResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarMusicaRequisicao, com.pedror.grpc.AtualizarMusicaResposta> getAtualizarMusicaMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarMusicaRequisicao, com.pedror.grpc.AtualizarMusicaResposta> getAtualizarMusicaMethod;
+        if ((getAtualizarMusicaMethod = MusicaServiceGrpc.getAtualizarMusicaMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getAtualizarMusicaMethod = MusicaServiceGrpc.getAtualizarMusicaMethod) == null) {
+                    MusicaServiceGrpc.getAtualizarMusicaMethod = getAtualizarMusicaMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.AtualizarMusicaRequisicao, com.pedror.grpc.AtualizarMusicaResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "AtualizarMusica")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.AtualizarMusicaRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.AtualizarMusicaResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("AtualizarMusica")).build();
+                }
+            }
+        }
+        return getAtualizarMusicaMethod;
+    }
+
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarPlaylistRequisicao, com.pedror.grpc.AtualizarPlaylistResposta> getAtualizarPlaylistMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "AtualizarPlaylist", requestType = com.pedror.grpc.AtualizarPlaylistRequisicao.class, responseType = com.pedror.grpc.AtualizarPlaylistResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarPlaylistRequisicao, com.pedror.grpc.AtualizarPlaylistResposta> getAtualizarPlaylistMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.AtualizarPlaylistRequisicao, com.pedror.grpc.AtualizarPlaylistResposta> getAtualizarPlaylistMethod;
+        if ((getAtualizarPlaylistMethod = MusicaServiceGrpc.getAtualizarPlaylistMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getAtualizarPlaylistMethod = MusicaServiceGrpc.getAtualizarPlaylistMethod) == null) {
+                    MusicaServiceGrpc.getAtualizarPlaylistMethod = getAtualizarPlaylistMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.AtualizarPlaylistRequisicao, com.pedror.grpc.AtualizarPlaylistResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "AtualizarPlaylist")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.AtualizarPlaylistRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.AtualizarPlaylistResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("AtualizarPlaylist")).build();
+                }
+            }
+        }
+        return getAtualizarPlaylistMethod;
+    }
+
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.DeletarUsuarioRequisicao, com.pedror.grpc.DeletarUsuarioResposta> getDeletarUsuarioMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "DeletarUsuario", requestType = com.pedror.grpc.DeletarUsuarioRequisicao.class, responseType = com.pedror.grpc.DeletarUsuarioResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.DeletarUsuarioRequisicao, com.pedror.grpc.DeletarUsuarioResposta> getDeletarUsuarioMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.DeletarUsuarioRequisicao, com.pedror.grpc.DeletarUsuarioResposta> getDeletarUsuarioMethod;
+        if ((getDeletarUsuarioMethod = MusicaServiceGrpc.getDeletarUsuarioMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getDeletarUsuarioMethod = MusicaServiceGrpc.getDeletarUsuarioMethod) == null) {
+                    MusicaServiceGrpc.getDeletarUsuarioMethod = getDeletarUsuarioMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.DeletarUsuarioRequisicao, com.pedror.grpc.DeletarUsuarioResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletarUsuario")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.DeletarUsuarioRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.DeletarUsuarioResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("DeletarUsuario")).build();
+                }
+            }
+        }
+        return getDeletarUsuarioMethod;
+    }
+
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.DeletarMusicaRequisicao, com.pedror.grpc.DeletarMusicaResposta> getDeletarMusicaMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "DeletarMusica", requestType = com.pedror.grpc.DeletarMusicaRequisicao.class, responseType = com.pedror.grpc.DeletarMusicaResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.DeletarMusicaRequisicao, com.pedror.grpc.DeletarMusicaResposta> getDeletarMusicaMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.DeletarMusicaRequisicao, com.pedror.grpc.DeletarMusicaResposta> getDeletarMusicaMethod;
+        if ((getDeletarMusicaMethod = MusicaServiceGrpc.getDeletarMusicaMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getDeletarMusicaMethod = MusicaServiceGrpc.getDeletarMusicaMethod) == null) {
+                    MusicaServiceGrpc.getDeletarMusicaMethod = getDeletarMusicaMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.DeletarMusicaRequisicao, com.pedror.grpc.DeletarMusicaResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletarMusica")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.DeletarMusicaRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.DeletarMusicaResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("DeletarMusica")).build();
+                }
+            }
+        }
+        return getDeletarMusicaMethod;
+    }
+
+    private static volatile io.grpc.MethodDescriptor<com.pedror.grpc.DeletarPlaylistRequisicao, com.pedror.grpc.DeletarPlaylistResposta> getDeletarPlaylistMethod;
+
+    @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/' + "DeletarPlaylist", requestType = com.pedror.grpc.DeletarPlaylistRequisicao.class, responseType = com.pedror.grpc.DeletarPlaylistResposta.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.pedror.grpc.DeletarPlaylistRequisicao, com.pedror.grpc.DeletarPlaylistResposta> getDeletarPlaylistMethod() {
+        io.grpc.MethodDescriptor<com.pedror.grpc.DeletarPlaylistRequisicao, com.pedror.grpc.DeletarPlaylistResposta> getDeletarPlaylistMethod;
+        if ((getDeletarPlaylistMethod = MusicaServiceGrpc.getDeletarPlaylistMethod) == null) {
+            synchronized (MusicaServiceGrpc.class) {
+                if ((getDeletarPlaylistMethod = MusicaServiceGrpc.getDeletarPlaylistMethod) == null) {
+                    MusicaServiceGrpc.getDeletarPlaylistMethod = getDeletarPlaylistMethod = io.grpc.MethodDescriptor.<com.pedror.grpc.DeletarPlaylistRequisicao, com.pedror.grpc.DeletarPlaylistResposta>newBuilder().setType(io.grpc.MethodDescriptor.MethodType.UNARY).setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletarPlaylist")).setSampledToLocalTracing(true).setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.DeletarPlaylistRequisicao.getDefaultInstance())).setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(com.pedror.grpc.DeletarPlaylistResposta.getDefaultInstance())).setSchemaDescriptor(new MusicaServiceMethodDescriptorSupplier("DeletarPlaylist")).build();
+                }
+            }
+        }
+        return getDeletarPlaylistMethod;
+    }
+
     /**
      * Creates a new async stub that supports all call types for the service
      */
@@ -164,6 +299,60 @@ public final class MusicaServiceGrpc {
         default void getPlaylistsComMusica(com.pedror.grpc.GetPlaylistsComMusicaRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.GetPlaylistsComMusicaResposta> responseObserver) {
             io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlaylistsComMusicaMethod(), responseObserver);
         }
+
+        /**
+         */
+        default void criarUsuario(com.pedror.grpc.CriarUsuarioRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.CriarUsuarioResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCriarUsuarioMethod(), responseObserver);
+        }
+
+        /**
+         */
+        default void criarMusica(com.pedror.grpc.CriarMusicaRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.CriarMusicaResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCriarMusicaMethod(), responseObserver);
+        }
+
+        /**
+         */
+        default void criarPlaylist(com.pedror.grpc.CriarPlaylistRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.CriarPlaylistResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCriarPlaylistMethod(), responseObserver);
+        }
+
+        /**
+         */
+        default void atualizarUsuario(com.pedror.grpc.AtualizarUsuarioRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarUsuarioResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAtualizarUsuarioMethod(), responseObserver);
+        }
+
+        /**
+         */
+        default void atualizarMusica(com.pedror.grpc.AtualizarMusicaRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarMusicaResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAtualizarMusicaMethod(), responseObserver);
+        }
+
+        /**
+         */
+        default void atualizarPlaylist(com.pedror.grpc.AtualizarPlaylistRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarPlaylistResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAtualizarPlaylistMethod(), responseObserver);
+        }
+
+        /**
+         */
+        default void deletarUsuario(com.pedror.grpc.DeletarUsuarioRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarUsuarioResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletarUsuarioMethod(), responseObserver);
+        }
+
+        /**
+         */
+        default void deletarMusica(com.pedror.grpc.DeletarMusicaRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarMusicaResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletarMusicaMethod(), responseObserver);
+        }
+
+        /**
+         */
+        default void deletarPlaylist(com.pedror.grpc.DeletarPlaylistRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarPlaylistResposta> responseObserver) {
+            io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletarPlaylistMethod(), responseObserver);
+        }
     }
 
     /**
@@ -220,6 +409,60 @@ public final class MusicaServiceGrpc {
         public void getPlaylistsComMusica(com.pedror.grpc.GetPlaylistsComMusicaRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.GetPlaylistsComMusicaResposta> responseObserver) {
             io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getGetPlaylistsComMusicaMethod(), getCallOptions()), request, responseObserver);
         }
+
+        /**
+         */
+        public void criarUsuario(com.pedror.grpc.CriarUsuarioRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.CriarUsuarioResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getCriarUsuarioMethod(), getCallOptions()), request, responseObserver);
+        }
+
+        /**
+         */
+        public void criarMusica(com.pedror.grpc.CriarMusicaRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.CriarMusicaResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getCriarMusicaMethod(), getCallOptions()), request, responseObserver);
+        }
+
+        /**
+         */
+        public void criarPlaylist(com.pedror.grpc.CriarPlaylistRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.CriarPlaylistResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getCriarPlaylistMethod(), getCallOptions()), request, responseObserver);
+        }
+
+        /**
+         */
+        public void atualizarUsuario(com.pedror.grpc.AtualizarUsuarioRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarUsuarioResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getAtualizarUsuarioMethod(), getCallOptions()), request, responseObserver);
+        }
+
+        /**
+         */
+        public void atualizarMusica(com.pedror.grpc.AtualizarMusicaRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarMusicaResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getAtualizarMusicaMethod(), getCallOptions()), request, responseObserver);
+        }
+
+        /**
+         */
+        public void atualizarPlaylist(com.pedror.grpc.AtualizarPlaylistRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarPlaylistResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getAtualizarPlaylistMethod(), getCallOptions()), request, responseObserver);
+        }
+
+        /**
+         */
+        public void deletarUsuario(com.pedror.grpc.DeletarUsuarioRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarUsuarioResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getDeletarUsuarioMethod(), getCallOptions()), request, responseObserver);
+        }
+
+        /**
+         */
+        public void deletarMusica(com.pedror.grpc.DeletarMusicaRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarMusicaResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getDeletarMusicaMethod(), getCallOptions()), request, responseObserver);
+        }
+
+        /**
+         */
+        public void deletarPlaylist(com.pedror.grpc.DeletarPlaylistRequisicao request, io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarPlaylistResposta> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncUnaryCall(getChannel().newCall(getDeletarPlaylistMethod(), getCallOptions()), request, responseObserver);
+        }
     }
 
     /**
@@ -264,6 +507,60 @@ public final class MusicaServiceGrpc {
          */
         public com.pedror.grpc.GetPlaylistsComMusicaResposta getPlaylistsComMusica(com.pedror.grpc.GetPlaylistsComMusicaRequisicao request) {
             return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getGetPlaylistsComMusicaMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.CriarUsuarioResposta criarUsuario(com.pedror.grpc.CriarUsuarioRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getCriarUsuarioMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.CriarMusicaResposta criarMusica(com.pedror.grpc.CriarMusicaRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getCriarMusicaMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.CriarPlaylistResposta criarPlaylist(com.pedror.grpc.CriarPlaylistRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getCriarPlaylistMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.AtualizarUsuarioResposta atualizarUsuario(com.pedror.grpc.AtualizarUsuarioRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getAtualizarUsuarioMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.AtualizarMusicaResposta atualizarMusica(com.pedror.grpc.AtualizarMusicaRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getAtualizarMusicaMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.AtualizarPlaylistResposta atualizarPlaylist(com.pedror.grpc.AtualizarPlaylistRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getAtualizarPlaylistMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.DeletarUsuarioResposta deletarUsuario(com.pedror.grpc.DeletarUsuarioRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getDeletarUsuarioMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.DeletarMusicaResposta deletarMusica(com.pedror.grpc.DeletarMusicaRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getDeletarMusicaMethod(), getCallOptions(), request);
+        }
+
+        /**
+         */
+        public com.pedror.grpc.DeletarPlaylistResposta deletarPlaylist(com.pedror.grpc.DeletarPlaylistRequisicao request) {
+            return io.grpc.stub.ClientCalls.blockingUnaryCall(getChannel(), getDeletarPlaylistMethod(), getCallOptions(), request);
         }
     }
 
@@ -310,6 +607,60 @@ public final class MusicaServiceGrpc {
         public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.GetPlaylistsComMusicaResposta> getPlaylistsComMusica(com.pedror.grpc.GetPlaylistsComMusicaRequisicao request) {
             return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getGetPlaylistsComMusicaMethod(), getCallOptions()), request);
         }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.CriarUsuarioResposta> criarUsuario(com.pedror.grpc.CriarUsuarioRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getCriarUsuarioMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.CriarMusicaResposta> criarMusica(com.pedror.grpc.CriarMusicaRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getCriarMusicaMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.CriarPlaylistResposta> criarPlaylist(com.pedror.grpc.CriarPlaylistRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getCriarPlaylistMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.AtualizarUsuarioResposta> atualizarUsuario(com.pedror.grpc.AtualizarUsuarioRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getAtualizarUsuarioMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.AtualizarMusicaResposta> atualizarMusica(com.pedror.grpc.AtualizarMusicaRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getAtualizarMusicaMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.AtualizarPlaylistResposta> atualizarPlaylist(com.pedror.grpc.AtualizarPlaylistRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getAtualizarPlaylistMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.DeletarUsuarioResposta> deletarUsuario(com.pedror.grpc.DeletarUsuarioRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getDeletarUsuarioMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.DeletarMusicaResposta> deletarMusica(com.pedror.grpc.DeletarMusicaRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getDeletarMusicaMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.pedror.grpc.DeletarPlaylistResposta> deletarPlaylist(com.pedror.grpc.DeletarPlaylistRequisicao request) {
+            return io.grpc.stub.ClientCalls.futureUnaryCall(getChannel().newCall(getDeletarPlaylistMethod(), getCallOptions()), request);
+        }
     }
 
     private static final int METHODID_GET_USUARIOS = 0;
@@ -321,6 +672,24 @@ public final class MusicaServiceGrpc {
     private static final int METHODID_GET_MUSICAS_DA_PLAYLIST = 3;
 
     private static final int METHODID_GET_PLAYLISTS_COM_MUSICA = 4;
+
+    private static final int METHODID_CRIAR_USUARIO = 5;
+
+    private static final int METHODID_CRIAR_MUSICA = 6;
+
+    private static final int METHODID_CRIAR_PLAYLIST = 7;
+
+    private static final int METHODID_ATUALIZAR_USUARIO = 8;
+
+    private static final int METHODID_ATUALIZAR_MUSICA = 9;
+
+    private static final int METHODID_ATUALIZAR_PLAYLIST = 10;
+
+    private static final int METHODID_DELETAR_USUARIO = 11;
+
+    private static final int METHODID_DELETAR_MUSICA = 12;
+
+    private static final int METHODID_DELETAR_PLAYLIST = 13;
 
     private static final class MethodHandlers<Req, Resp> implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>, io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>, io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>, io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
 
@@ -352,6 +721,33 @@ public final class MusicaServiceGrpc {
                 case METHODID_GET_PLAYLISTS_COM_MUSICA:
                     serviceImpl.getPlaylistsComMusica((com.pedror.grpc.GetPlaylistsComMusicaRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.GetPlaylistsComMusicaResposta>) responseObserver);
                     break;
+                case METHODID_CRIAR_USUARIO:
+                    serviceImpl.criarUsuario((com.pedror.grpc.CriarUsuarioRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.CriarUsuarioResposta>) responseObserver);
+                    break;
+                case METHODID_CRIAR_MUSICA:
+                    serviceImpl.criarMusica((com.pedror.grpc.CriarMusicaRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.CriarMusicaResposta>) responseObserver);
+                    break;
+                case METHODID_CRIAR_PLAYLIST:
+                    serviceImpl.criarPlaylist((com.pedror.grpc.CriarPlaylistRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.CriarPlaylistResposta>) responseObserver);
+                    break;
+                case METHODID_ATUALIZAR_USUARIO:
+                    serviceImpl.atualizarUsuario((com.pedror.grpc.AtualizarUsuarioRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarUsuarioResposta>) responseObserver);
+                    break;
+                case METHODID_ATUALIZAR_MUSICA:
+                    serviceImpl.atualizarMusica((com.pedror.grpc.AtualizarMusicaRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarMusicaResposta>) responseObserver);
+                    break;
+                case METHODID_ATUALIZAR_PLAYLIST:
+                    serviceImpl.atualizarPlaylist((com.pedror.grpc.AtualizarPlaylistRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.AtualizarPlaylistResposta>) responseObserver);
+                    break;
+                case METHODID_DELETAR_USUARIO:
+                    serviceImpl.deletarUsuario((com.pedror.grpc.DeletarUsuarioRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarUsuarioResposta>) responseObserver);
+                    break;
+                case METHODID_DELETAR_MUSICA:
+                    serviceImpl.deletarMusica((com.pedror.grpc.DeletarMusicaRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarMusicaResposta>) responseObserver);
+                    break;
+                case METHODID_DELETAR_PLAYLIST:
+                    serviceImpl.deletarPlaylist((com.pedror.grpc.DeletarPlaylistRequisicao) request, (io.grpc.stub.StreamObserver<com.pedror.grpc.DeletarPlaylistResposta>) responseObserver);
+                    break;
                 default:
                     throw new AssertionError();
             }
@@ -368,7 +764,7 @@ public final class MusicaServiceGrpc {
     }
 
     public static io.grpc.ServerServiceDefinition bindService(AsyncService service) {
-        return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor()).addMethod(getGetUsuariosMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.Vazio, com.pedror.grpc.GetUsuariosResposta>(service, METHODID_GET_USUARIOS))).addMethod(getGetMusicasMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.Vazio, com.pedror.grpc.GetMusicasResposta>(service, METHODID_GET_MUSICAS))).addMethod(getGetPlaylistsDoUsuarioMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.GetPlaylistsDoUsuarioRequisicao, com.pedror.grpc.GetPlaylistDoUsuarioResposta>(service, METHODID_GET_PLAYLISTS_DO_USUARIO))).addMethod(getGetMusicasDaPlaylistMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.GetMusicasDaPlaylistRequisicao, com.pedror.grpc.GetMusicasDaPlaylistResposta>(service, METHODID_GET_MUSICAS_DA_PLAYLIST))).addMethod(getGetPlaylistsComMusicaMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.GetPlaylistsComMusicaRequisicao, com.pedror.grpc.GetPlaylistsComMusicaResposta>(service, METHODID_GET_PLAYLISTS_COM_MUSICA))).build();
+        return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor()).addMethod(getGetUsuariosMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.Vazio, com.pedror.grpc.GetUsuariosResposta>(service, METHODID_GET_USUARIOS))).addMethod(getGetMusicasMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.Vazio, com.pedror.grpc.GetMusicasResposta>(service, METHODID_GET_MUSICAS))).addMethod(getGetPlaylistsDoUsuarioMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.GetPlaylistsDoUsuarioRequisicao, com.pedror.grpc.GetPlaylistDoUsuarioResposta>(service, METHODID_GET_PLAYLISTS_DO_USUARIO))).addMethod(getGetMusicasDaPlaylistMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.GetMusicasDaPlaylistRequisicao, com.pedror.grpc.GetMusicasDaPlaylistResposta>(service, METHODID_GET_MUSICAS_DA_PLAYLIST))).addMethod(getGetPlaylistsComMusicaMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.GetPlaylistsComMusicaRequisicao, com.pedror.grpc.GetPlaylistsComMusicaResposta>(service, METHODID_GET_PLAYLISTS_COM_MUSICA))).addMethod(getCriarUsuarioMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.CriarUsuarioRequisicao, com.pedror.grpc.CriarUsuarioResposta>(service, METHODID_CRIAR_USUARIO))).addMethod(getCriarMusicaMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.CriarMusicaRequisicao, com.pedror.grpc.CriarMusicaResposta>(service, METHODID_CRIAR_MUSICA))).addMethod(getCriarPlaylistMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.CriarPlaylistRequisicao, com.pedror.grpc.CriarPlaylistResposta>(service, METHODID_CRIAR_PLAYLIST))).addMethod(getAtualizarUsuarioMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.AtualizarUsuarioRequisicao, com.pedror.grpc.AtualizarUsuarioResposta>(service, METHODID_ATUALIZAR_USUARIO))).addMethod(getAtualizarMusicaMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.AtualizarMusicaRequisicao, com.pedror.grpc.AtualizarMusicaResposta>(service, METHODID_ATUALIZAR_MUSICA))).addMethod(getAtualizarPlaylistMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.AtualizarPlaylistRequisicao, com.pedror.grpc.AtualizarPlaylistResposta>(service, METHODID_ATUALIZAR_PLAYLIST))).addMethod(getDeletarUsuarioMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.DeletarUsuarioRequisicao, com.pedror.grpc.DeletarUsuarioResposta>(service, METHODID_DELETAR_USUARIO))).addMethod(getDeletarMusicaMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.DeletarMusicaRequisicao, com.pedror.grpc.DeletarMusicaResposta>(service, METHODID_DELETAR_MUSICA))).addMethod(getDeletarPlaylistMethod(), io.grpc.stub.ServerCalls.asyncUnaryCall(new MethodHandlers<com.pedror.grpc.DeletarPlaylistRequisicao, com.pedror.grpc.DeletarPlaylistResposta>(service, METHODID_DELETAR_PLAYLIST))).build();
     }
 
     private static abstract class MusicaServiceBaseDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
@@ -415,7 +811,7 @@ public final class MusicaServiceGrpc {
             synchronized (MusicaServiceGrpc.class) {
                 result = serviceDescriptor;
                 if (result == null) {
-                    serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME).setSchemaDescriptor(new MusicaServiceFileDescriptorSupplier()).addMethod(getGetUsuariosMethod()).addMethod(getGetMusicasMethod()).addMethod(getGetPlaylistsDoUsuarioMethod()).addMethod(getGetMusicasDaPlaylistMethod()).addMethod(getGetPlaylistsComMusicaMethod()).build();
+                    serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME).setSchemaDescriptor(new MusicaServiceFileDescriptorSupplier()).addMethod(getGetUsuariosMethod()).addMethod(getGetMusicasMethod()).addMethod(getGetPlaylistsDoUsuarioMethod()).addMethod(getGetMusicasDaPlaylistMethod()).addMethod(getGetPlaylistsComMusicaMethod()).addMethod(getCriarUsuarioMethod()).addMethod(getCriarMusicaMethod()).addMethod(getCriarPlaylistMethod()).addMethod(getAtualizarUsuarioMethod()).addMethod(getAtualizarMusicaMethod()).addMethod(getAtualizarPlaylistMethod()).addMethod(getDeletarUsuarioMethod()).addMethod(getDeletarMusicaMethod()).addMethod(getDeletarPlaylistMethod()).build();
                 }
             }
         }

@@ -21,6 +21,33 @@ service MusicaService {
 
   rpc GetPlaylistsComMusica (GetPlaylistsComMusicaRequisicao) returns (GetPlaylistsComMusicaResposta) {
   }
+  rpc CriarUsuario (CriarUsuarioRequisicao) returns (CriarUsuarioResposta) {
+
+  }
+  rpc CriarMusica (CriarMusicaRequisicao) returns (CriarMusicaResposta) {
+
+  }
+  rpc CriarPlaylist (CriarPlaylistRequisicao) returns (CriarPlaylistResposta) {
+
+  }
+  rpc AtualizarUsuario (AtualizarUsuarioRequisicao) returns (AtualizarUsuarioResposta) {
+
+  }
+  rpc AtualizarMusica (AtualizarMusicaRequisicao) returns (AtualizarMusicaResposta) {
+
+  }
+  rpc AtualizarPlaylist (AtualizarPlaylistRequisicao) returns (AtualizarPlaylistResposta) {
+
+  }
+  rpc DeletarUsuario (DeletarUsuarioRequisicao) returns (DeletarUsuarioResposta) {
+
+  }
+  rpc DeletarMusica (DeletarMusicaRequisicao) returns (DeletarMusicaResposta) {
+
+  }
+  rpc DeletarPlaylist (DeletarPlaylistRequisicao) returns (DeletarPlaylistResposta) {
+
+  }
 }
 
 message Vazio {}
@@ -74,4 +101,87 @@ message GetPlaylistsComMusicaRequisicao {
 
 message GetPlaylistsComMusicaResposta {
   repeated PlaylistGrpc playlists = 1;
+}
+
+message CriarUsuarioRequisicao {
+  string nome = 1;
+  int32 idade = 2;
+  repeated int32 idPlaylists = 3;
+}
+
+message CriarUsuarioResposta {
+  UsuarioGrpc usuario = 1;
+}
+
+message CriarMusicaRequisicao {
+  string nome = 1;
+  string artista = 2;
+}
+
+message CriarMusicaResposta {
+  MusicaGrpc musica = 1;
+}
+
+message CriarPlaylistRequisicao {
+  string nome = 1;
+  repeated int32 idMusicas = 2;
+}
+
+message CriarPlaylistResposta {
+  PlaylistGrpc playlist = 1;
+}
+
+message AtualizarUsuarioRequisicao {
+  int32 id = 1;
+  string nome = 2;
+  int32 idade = 3;
+  repeated int32 idPlaylists = 4;
+}
+
+message AtualizarUsuarioResposta {
+  UsuarioGrpc usuario = 1;
+}
+
+message AtualizarMusicaRequisicao {
+  int32 id = 1;
+  string nome = 2;
+  string artista = 3;
+}
+
+message AtualizarMusicaResposta {
+  MusicaGrpc musica = 1;
+}
+
+message AtualizarPlaylistRequisicao {
+  int32 id = 1;
+  string nome = 2;
+  repeated int32 idMusicas = 3;
+}
+
+message AtualizarPlaylistResposta {
+  PlaylistGrpc playlist = 1;
+}
+
+message DeletarUsuarioRequisicao {
+  int32 id = 1;
+}
+
+message DeletarUsuarioResposta {
+  string resultado = 1;
+}
+
+message DeletarMusicaRequisicao {
+  int32 id = 1;
+}
+
+message DeletarMusicaResposta {
+  string resultado = 1;
+}
+
+message DeletarPlaylistRequisicao {
+  int32 id = 1;
+}
+
+message DeletarPlaylistResposta {
+  string resultado = 1;
 }

@@ -81,5 +81,4 @@ class MusicaRestClient:
 
 client = MusicaRestClient()
 print(client.listarUsuarios())
-print(client.atualizaMusica(1, 'Musica 1', 'Artista 1'))
 print(client.listarMusicas())

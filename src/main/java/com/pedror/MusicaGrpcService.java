@@ -139,4 +139,49 @@ public class MusicaGrpcService implements MusicaService {
     return Uni.createFrom().item(GetPlaylistsComMusicaResposta.newBuilder().addAllPlaylists(playlists).build());
   }
 
+  @Override
+  public Uni<CriarUsuarioResposta> criarUsuario(CriarUsuarioRequisicao request) {
+    return null;
+  }
+
+  @Override
+  public Uni<CriarMusicaResposta> criarMusica(CriarMusicaRequisicao request) {
+    return null;
+  }
+
+  @Override
+  public Uni<CriarPlaylistResposta> criarPlaylist(CriarPlaylistRequisicao request) {
+    return null;
+  }
+
+  @Override
+  public Uni<AtualizarUsuarioResposta> atualizarUsuario(AtualizarUsuarioRequisicao request) {
+    return null;
+  }
+
+  @Override
+  public Uni<AtualizarMusicaResposta> atualizarMusica(AtualizarMusicaRequisicao request) {
+    return null;
+  }
+
+  @Override
+  public Uni<AtualizarPlaylistResposta> atualizarPlaylist(AtualizarPlaylistRequisicao request) {
+    return null;
+  }
+
+  @Override
+  public Uni<DeletarUsuarioResposta> deletarUsuario(DeletarUsuarioRequisicao request) {
+    return null;
+  }
+
+  @Override
+  public Uni<DeletarMusicaResposta> deletarMusica(DeletarMusicaRequisicao request) {
+    return null;
+  }
+
+  @Override
+  public Uni<DeletarPlaylistResposta> deletarPlaylist(DeletarPlaylistRequisicao request) {
+    return null;
+  }
+
 }

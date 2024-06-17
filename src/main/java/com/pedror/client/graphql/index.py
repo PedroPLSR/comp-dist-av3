@@ -1,157 +1,110 @@
+import requests
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
 
 class MusicaGraphQLClient:
-    def __init__(self):
-        self.transport = RequestsHTTPTransport(url='http://localhost:8080/graphql', use_json=True)
+    def __init__(self, url='http://localhost:8080/graphql'):
+        self.url = url
+        self.transport = RequestsHTTPTransport(url=self.url, use_json=True)
         self.client = Client(transport=self.transport, fetch_schema_from_transport=True)
 
-    def criaUsuario(self, nome, idade, IdPlaylists):
-        query = gql("""
-            mutation {
-                createUser(input: {name: "%s", age: %d, playlistIds: %s}) {
-                    id
-                    name
-                    age
-                    playlists {
-                        id
-                        name
-                    }
-                }
-            }
-        """ % (nome, idade, IdPlaylists))
-        return self.client.execute(query)
-
-    def criaPlaylist(self, nome, IdMusicas):
-        query = gql("""
-            mutation {
-                createPlaylist(input: {name: "%s", musicIds: %s}) {
-                    id
-                    name
-                    musics {
-                        id
-                        name
-                    }
-                }
-            }
-        """ % (nome, IdMusicas))
-        return self.client.execute(query)
-
-    def createMusica(self, nome, artista):
-        query = gql("""
-            mutation {
-                createMusic(input: {name: "%s", artist: "%s"}) {
-                    id
-                    name
-                    artist
-                }
-            }
-        """ % (nome, artista))
-        return self.client.execute(query)
-
-    def listarUsuarios(self):
+    def get_usuarios(self):
         query = gql("""
             query {
-                users {
+                usuarios {
                     id
-                    name
-                    age
+                    nome
+                    idade
                     playlists {
                         id
-                        name
+                        nome
                     }
                 }
             }
         """)
-        return self.client.execute(query)
+        result = self.client.execute(query)
+        print("Usuarios:", result)
+        return result
 
-    def getMusicas(self):
+    def get_musicas(self):
         query = gql("""
             query {
-                musics {
+                musicas {
                     id
-                    name
-                    artist
+                    nome
+                    artista
                 }
             }
         """)
-        return self.client.execute(query)
+        result = self.client.execute(query)
+        print("Musicas:", result)
+        return result
 
-    def listarPlaylistsUsuario(self, idUsuario):
+    def get_playlists_do_usuario(self, id_usuario):
         query = gql("""
-            query {
-                user(id: %d) {
-                    playlists {
+            query GetPlaylistsDoUsuario($idUsuario: Int!) {
+                playlistsDoUsuario(idUsuario: $idUsuario) {
+                    id
+                    nome
+                    musicas {
                         id
-                        name
+                        nome
                     }
                 }
             }
-        """ % idUsuario)
-        return self.client.execute(query)
+        """)
+        variables = {"idUsuario": int(id_usuario)}  # Certifique-se de converter para inteiro
+        result = self.client.execute(query, variable_values=variables)
+        print(f"Playlists do Usuario {id_usuario}:", result)
+        return result
 
-    def listarMusicasPlaylist(self, idPlaylist):
+    def get_musicas_da_playlist(self, id_playlist):
         query = gql("""
-            query {
-                playlist(id: %d) {
-                    musics {
+            query GetMusicasDaPlaylist($idPlaylist: Int!) {
+                musicasDaPlaylist(idPlaylist: $idPlaylist) {
+                    id
+                    nome
+                }
+            }
+        """)
+        variables = {"idPlaylist": int(id_playlist)}
+        result = self.client.execute(query, variable_values=variables)
+        print(f"Musicas da Playlist {id_playlist}:", result)
+        return result
+
+
+    def get_playlists_com_musica(self, id_musica):
+        query = gql("""
+            query GetPlaylistsComMusica($idMusica: Int!) {
+                playlistsComMusica(idMusica: $idMusica) {
+                    id
+                    nome
+                    musicas {
                         id
-                        name
+                        nome
                     }
                 }
             }
-        """ % idPlaylist)
-        return self.client.execute(query)
+        """)
+        variables = {"idMusica": id_musica}
+        result = self.client.execute(query, variable_values=variables)
+        print(f"Playlists com Musica {id_musica}:", result)
+        return result
 
-    def atualizarUsuario(self, idUsuario, nome, idade, IdPlaylists):
-        query = gql("""
-            mutation {
-                updateUser(id: %d, input: {name: "%s", age: %d, playlistIds: %s}) {
-                    id
-                    name
-                    age
-                    playlists {
-                        id
-                        name
-                    }
-                }
-            }
-        """ % (idUsuario, nome, idade, IdPlaylists))
-        return self.client.execute(query)
-
-    def atualizaMusica(self, idMusica, nome, artista):
-        query = gql("""
-            mutation {
-                updateMusic(id: %d, input: {name: "%s", artist: "%s"}) {
-                    id
-                    name
-                    artist
-                }
-            }
-        """ % (idMusica, nome, artista))
-        return self.client.execute(query)
-
-    def deletaUsuario(self, idUsuario):
-        query = gql("""
-            mutation {
-                deleteUser(id: %d) {
-                    id
-                }
-            }
-        """ % idUsuario)
-        return self.client.execute(query)
-
-    def deletaMusica(self, idMusica):
-        query = gql("""
-            mutation {
-                deleteMusic(id: %d) {
-                    id
-                }
-            }
-        """ % idMusica)
-        return self.client.execute(query)
-
+    def get_usuarios_from_url(self):
+        response = requests.get(url=f'{self.url}/usuarios')
+        if response.status_code == 200:
+            print("Usuarios from URL:", response.json())
+            return response.json()
+        else:
+            print(f'Erro com status code: {response.status_code}')
+            return f'Erro com status code: {response.status_code}'
 
 client = MusicaGraphQLClient()
-client.createMusica('musicaIRADA', 'artistaMASSA')
-client.getMusicas()
+client.get_musicas()
+client.get_usuarios()
+# Você pode descomentar as chamadas abaixo para ver mais saídas
+client.get_playlists_do_usuario(1)
+client.get_musicas_da_playlist(1)
+client.get_playlists_com_musica(1)
+# client.get_playlets_com_musirs_comuasi

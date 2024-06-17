@@ -63,6 +63,78 @@ public final class MusicasGrpcProto {
 
     static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_GetPlaylistsComMusicaResposta_fieldAccessorTable;
 
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_CriarUsuarioRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_CriarUsuarioRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_CriarUsuarioResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_CriarUsuarioResposta_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_CriarMusicaRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_CriarMusicaRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_CriarMusicaResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_CriarMusicaResposta_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_CriarPlaylistRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_CriarPlaylistRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_CriarPlaylistResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_CriarPlaylistResposta_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_AtualizarUsuarioRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_AtualizarUsuarioRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_AtualizarUsuarioResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_AtualizarUsuarioResposta_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_AtualizarMusicaRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_AtualizarMusicaRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_AtualizarMusicaResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_AtualizarMusicaResposta_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_AtualizarPlaylistRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_AtualizarPlaylistRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_AtualizarPlaylistResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_AtualizarPlaylistResposta_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_DeletarUsuarioRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_DeletarUsuarioRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_DeletarUsuarioResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_DeletarUsuarioResposta_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_DeletarMusicaRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_DeletarMusicaRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_DeletarMusicaResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_DeletarMusicaResposta_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_DeletarPlaylistRequisicao_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_DeletarPlaylistRequisicao_fieldAccessorTable;
+
+    static final com.google.protobuf.Descriptors.Descriptor internal_static_musica_DeletarPlaylistResposta_descriptor;
+
+    static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_musica_DeletarPlaylistResposta_fieldAccessorTable;
+
     public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
         return descriptor;
     }
@@ -70,7 +142,7 @@ public final class MusicasGrpcProto {
     private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
 
     static {
-        java.lang.String[] descriptorData = { "\n\014musica.proto\022\006musica\"\007\n\005Vazio\"_\n\013Usuar" + "ioGrpc\022\n\n\002id\030\001 \001(\005\022\014\n\004nome\030\002 \001(\t\022\r\n\005idad" + "e\030\003 \001(\005\022\'\n\tplaylists\030\004 \003(\0132\024.musica.Play" + "listGrpc\"7\n\nMusicaGrpc\022\n\n\002id\030\001 \001(\005\022\014\n\004no" + "me\030\002 \001(\t\022\017\n\007artista\030\003 \001(\t\"M\n\014PlaylistGrp" + "c\022\n\n\002id\030\001 \001(\005\022\014\n\004nome\030\002 \001(\t\022#\n\007musicas\030\004" + " \003(\0132\022.musica.MusicaGrpc\"<\n\023GetUsuariosR" + "esposta\022%\n\010usuarios\030\001 \003(\0132\023.musica.Usuar" + "ioGrpc\"9\n\022GetMusicasResposta\022#\n\007musicas\030" + "\001 \003(\0132\022.musica.MusicaGrpc\"4\n\037GetPlaylist" + "sDoUsuarioRequisicao\022\021\n\tidUsuario\030\001 \001(\005\"" + "G\n\034GetPlaylistDoUsuarioResposta\022\'\n\tplayl" + "ists\030\001 \003(\0132\024.musica.PlaylistGrpc\"4\n\036GetM" + "usicasDaPlaylistRequisicao\022\022\n\nidPlaylist" + "\030\001 \001(\005\"C\n\034GetMusicasDaPlaylistResposta\022#" + "\n\007musicas\030\001 \003(\0132\022.musica.MusicaGrpc\"3\n\037G" + "etPlaylistsComMusicaRequisicao\022\020\n\010idMusi" + "ca\030\001 \001(\005\"H\n\035GetPlaylistsComMusicaRespost" + "a\022\'\n\tplaylists\030\001 \003(\0132\024.musica.PlaylistGr" + "pc2\304\003\n\rMusicaService\022;\n\013GetUsuarios\022\r.mu" + "sica.Vazio\032\033.musica.GetUsuariosResposta\"" + "\000\0229\n\nGetMusicas\022\r.musica.Vazio\032\032.musica." + "GetMusicasResposta\"\000\022h\n\025GetPlaylistsDoUs" + "uario\022\'.musica.GetPlaylistsDoUsuarioRequ" + "isicao\032$.musica.GetPlaylistDoUsuarioResp" + "osta\"\000\022f\n\024GetMusicasDaPlaylist\022&.musica." + "GetMusicasDaPlaylistRequisicao\032$.musica." + "GetMusicasDaPlaylistResposta\"\000\022i\n\025GetPla" + "ylistsComMusica\022\'.musica.GetPlaylistsCom" + "MusicaRequisicao\032%.musica.GetPlaylistsCo" + "mMusicaResposta\"\000B%\n\017com.pedror.grpcB\020Mu" + "sicasGrpcProtoP\001b\006proto3" };
+        java.lang.String[] descriptorData = { "\n\014musica.proto\022\006musica\"\007\n\005Vazio\"_\n\013Usuar" + "ioGrpc\022\n\n\002id\030\001 \001(\005\022\014\n\004nome\030\002 \001(\t\022\r\n\005idad" + "e\030\003 \001(\005\022\'\n\tplaylists\030\004 \003(\0132\024.musica.Play" + "listGrpc\"7\n\nMusicaGrpc\022\n\n\002id\030\001 \001(\005\022\014\n\004no" + "me\030\002 \001(\t\022\017\n\007artista\030\003 \001(\t\"M\n\014PlaylistGrp" + "c\022\n\n\002id\030\001 \001(\005\022\014\n\004nome\030\002 \001(\t\022#\n\007musicas\030\004" + " \003(\0132\022.musica.MusicaGrpc\"<\n\023GetUsuariosR" + "esposta\022%\n\010usuarios\030\001 \003(\0132\023.musica.Usuar" + "ioGrpc\"9\n\022GetMusicasResposta\022#\n\007musicas\030" + "\001 \003(\0132\022.musica.MusicaGrpc\"4\n\037GetPlaylist" + "sDoUsuarioRequisicao\022\021\n\tidUsuario\030\001 \001(\005\"" + "G\n\034GetPlaylistDoUsuarioResposta\022\'\n\tplayl" + "ists\030\001 \003(\0132\024.musica.PlaylistGrpc\"4\n\036GetM" + "usicasDaPlaylistRequisicao\022\022\n\nidPlaylist" + "\030\001 \001(\005\"C\n\034GetMusicasDaPlaylistResposta\022#" + "\n\007musicas\030\001 \003(\0132\022.musica.MusicaGrpc\"3\n\037G" + "etPlaylistsComMusicaRequisicao\022\020\n\010idMusi" + "ca\030\001 \001(\005\"H\n\035GetPlaylistsComMusicaRespost" + "a\022\'\n\tplaylists\030\001 \003(\0132\024.musica.PlaylistGr" + "pc\"J\n\026CriarUsuarioRequisicao\022\014\n\004nome\030\001 \001" + "(\t\022\r\n\005idade\030\002 \001(\005\022\023\n\013idPlaylists\030\003 \003(\005\"<" + "\n\024CriarUsuarioResposta\022$\n\007usuario\030\001 \001(\0132" + "\023.musica.UsuarioGrpc\"6\n\025CriarMusicaRequi" + "sicao\022\014\n\004nome\030\001 \001(\t\022\017\n\007artista\030\002 \001(\t\"9\n\023" + "CriarMusicaResposta\022\"\n\006musica\030\001 \001(\0132\022.mu" + "sica.MusicaGrpc\":\n\027CriarPlaylistRequisic" + "ao\022\014\n\004nome\030\001 \001(\t\022\021\n\tidMusicas\030\002 \003(\005\"?\n\025C" + "riarPlaylistResposta\022&\n\010playlist\030\001 \001(\0132\024" + ".musica.PlaylistGrpc\"Z\n\032AtualizarUsuario" + "Requisicao\022\n\n\002id\030\001 \001(\005\022\014\n\004nome\030\002 \001(\t\022\r\n\005" + "idade\030\003 \001(\005\022\023\n\013idPlaylists\030\004 \003(\005\"@\n\030Atua" + "lizarUsuarioResposta\022$\n\007usuario\030\001 \001(\0132\023." + "musica.UsuarioGrpc\"F\n\031AtualizarMusicaReq" + "uisicao\022\n\n\002id\030\001 \001(\005\022\014\n\004nome\030\002 \001(\t\022\017\n\007art" + "ista\030\003 \001(\t\"=\n\027AtualizarMusicaResposta\022\"\n" + "\006musica\030\001 \001(\0132\022.musica.MusicaGrpc\"J\n\033Atu" + "alizarPlaylistRequisicao\022\n\n\002id\030\001 \001(\005\022\014\n\004" + "nome\030\002 \001(\t\022\021\n\tidMusicas\030\003 \003(\005\"C\n\031Atualiz" + "arPlaylistResposta\022&\n\010playlist\030\001 \001(\0132\024.m" + "usica.PlaylistGrpc\"&\n\030DeletarUsuarioRequ" + "isicao\022\n\n\002id\030\001 \001(\005\"+\n\026DeletarUsuarioResp" + "osta\022\021\n\tresultado\030\001 \001(\t\"%\n\027DeletarMusica" + "Requisicao\022\n\n\002id\030\001 \001(\005\"*\n\025DeletarMusicaR" + "esposta\022\021\n\tresultado\030\001 \001(\t\"\'\n\031DeletarPla" + "ylistRequisicao\022\n\n\002id\030\001 \001(\005\",\n\027DeletarPl" + "aylistResposta\022\021\n\tresultado\030\001 \001(\t2\312\t\n\rMu" + "sicaService\022;\n\013GetUsuarios\022\r.musica.Vazi" + "o\032\033.musica.GetUsuariosResposta\"\000\0229\n\nGetM" + "usicas\022\r.musica.Vazio\032\032.musica.GetMusica" + "sResposta\"\000\022h\n\025GetPlaylistsDoUsuario\022\'.m" + "usica.GetPlaylistsDoUsuarioRequisicao\032$." + "musica.GetPlaylistDoUsuarioResposta\"\000\022f\n" + "\024GetMusicasDaPlaylist\022&.musica.GetMusica" + "sDaPlaylistRequisicao\032$.musica.GetMusica" + "sDaPlaylistResposta\"\000\022i\n\025GetPlaylistsCom" + "Musica\022\'.musica.GetPlaylistsComMusicaReq" + "uisicao\032%.musica.GetPlaylistsComMusicaRe" + "sposta\"\000\022N\n\014CriarUsuario\022\036.musica.CriarU" + "suarioRequisicao\032\034.musica.CriarUsuarioRe" + "sposta\"\000\022K\n\013CriarMusica\022\035.musica.CriarMu" + "sicaRequisicao\032\033.musica.CriarMusicaRespo" + "sta\"\000\022Q\n\rCriarPlaylist\022\037.musica.CriarPla" + "ylistRequisicao\032\035.musica.CriarPlaylistRe" + "sposta\"\000\022Z\n\020AtualizarUsuario\022\".musica.At" + "ualizarUsuarioRequisicao\032 .musica.Atuali" + "zarUsuarioResposta\"\000\022W\n\017AtualizarMusica\022" + "!.musica.AtualizarMusicaRequisicao\032\037.mus" + "ica.AtualizarMusicaResposta\"\000\022]\n\021Atualiz" + "arPlaylist\022#.musica.AtualizarPlaylistReq" + "uisicao\032!.musica.AtualizarPlaylistRespos" + "ta\"\000\022T\n\016DeletarUsuario\022 .musica.DeletarU" + "suarioRequisicao\032\036.musica.DeletarUsuario" + "Resposta\"\000\022Q\n\rDeletarMusica\022\037.musica.Del" + "etarMusicaRequisicao\032\035.musica.DeletarMus" + "icaResposta\"\000\022W\n\017DeletarPlaylist\022!.music" + "a.DeletarPlaylistRequisicao\032\037.musica.Del" + "etarPlaylistResposta\"\000B%\n\017com.pedror.grp" + "cB\020MusicasGrpcProtoP\001b\006proto3" };
         descriptor = com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
         internal_static_musica_Vazio_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_musica_Vazio_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_Vazio_descriptor, new java.lang.String[] {});
@@ -96,6 +168,42 @@ public final class MusicasGrpcProto {
         internal_static_musica_GetPlaylistsComMusicaRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_GetPlaylistsComMusicaRequisicao_descriptor, new java.lang.String[] { "IdMusica" });
         internal_static_musica_GetPlaylistsComMusicaResposta_descriptor = getDescriptor().getMessageTypes().get(11);
         internal_static_musica_GetPlaylistsComMusicaResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_GetPlaylistsComMusicaResposta_descriptor, new java.lang.String[] { "Playlists" });
+        internal_static_musica_CriarUsuarioRequisicao_descriptor = getDescriptor().getMessageTypes().get(12);
+        internal_static_musica_CriarUsuarioRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_CriarUsuarioRequisicao_descriptor, new java.lang.String[] { "Nome", "Idade", "IdPlaylists" });
+        internal_static_musica_CriarUsuarioResposta_descriptor = getDescriptor().getMessageTypes().get(13);
+        internal_static_musica_CriarUsuarioResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_CriarUsuarioResposta_descriptor, new java.lang.String[] { "Usuario" });
+        internal_static_musica_CriarMusicaRequisicao_descriptor = getDescriptor().getMessageTypes().get(14);
+        internal_static_musica_CriarMusicaRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_CriarMusicaRequisicao_descriptor, new java.lang.String[] { "Nome", "Artista" });
+        internal_static_musica_CriarMusicaResposta_descriptor = getDescriptor().getMessageTypes().get(15);
+        internal_static_musica_CriarMusicaResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_CriarMusicaResposta_descriptor, new java.lang.String[] { "Musica" });
+        internal_static_musica_CriarPlaylistRequisicao_descriptor = getDescriptor().getMessageTypes().get(16);
+        internal_static_musica_CriarPlaylistRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_CriarPlaylistRequisicao_descriptor, new java.lang.String[] { "Nome", "IdMusicas" });
+        internal_static_musica_CriarPlaylistResposta_descriptor = getDescriptor().getMessageTypes().get(17);
+        internal_static_musica_CriarPlaylistResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_CriarPlaylistResposta_descriptor, new java.lang.String[] { "Playlist" });
+        internal_static_musica_AtualizarUsuarioRequisicao_descriptor = getDescriptor().getMessageTypes().get(18);
+        internal_static_musica_AtualizarUsuarioRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_AtualizarUsuarioRequisicao_descriptor, new java.lang.String[] { "Id", "Nome", "Idade", "IdPlaylists" });
+        internal_static_musica_AtualizarUsuarioResposta_descriptor = getDescriptor().getMessageTypes().get(19);
+        internal_static_musica_AtualizarUsuarioResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_AtualizarUsuarioResposta_descriptor, new java.lang.String[] { "Usuario" });
+        internal_static_musica_AtualizarMusicaRequisicao_descriptor = getDescriptor().getMessageTypes().get(20);
+        internal_static_musica_AtualizarMusicaRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_AtualizarMusicaRequisicao_descriptor, new java.lang.String[] { "Id", "Nome", "Artista" });
+        internal_static_musica_AtualizarMusicaResposta_descriptor = getDescriptor().getMessageTypes().get(21);
+        internal_static_musica_AtualizarMusicaResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_AtualizarMusicaResposta_descriptor, new java.lang.String[] { "Musica" });
+        internal_static_musica_AtualizarPlaylistRequisicao_descriptor = getDescriptor().getMessageTypes().get(22);
+        internal_static_musica_AtualizarPlaylistRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_AtualizarPlaylistRequisicao_descriptor, new java.lang.String[] { "Id", "Nome", "IdMusicas" });
+        internal_static_musica_AtualizarPlaylistResposta_descriptor = getDescriptor().getMessageTypes().get(23);
+        internal_static_musica_AtualizarPlaylistResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_AtualizarPlaylistResposta_descriptor, new java.lang.String[] { "Playlist" });
+        internal_static_musica_DeletarUsuarioRequisicao_descriptor = getDescriptor().getMessageTypes().get(24);
+        internal_static_musica_DeletarUsuarioRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_DeletarUsuarioRequisicao_descriptor, new java.lang.String[] { "Id" });
+        internal_static_musica_DeletarUsuarioResposta_descriptor = getDescriptor().getMessageTypes().get(25);
+        internal_static_musica_DeletarUsuarioResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_DeletarUsuarioResposta_descriptor, new java.lang.String[] { "Resultado" });
+        internal_static_musica_DeletarMusicaRequisicao_descriptor = getDescriptor().getMessageTypes().get(26);
+        internal_static_musica_DeletarMusicaRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_DeletarMusicaRequisicao_descriptor, new java.lang.String[] { "Id" });
+        internal_static_musica_DeletarMusicaResposta_descriptor = getDescriptor().getMessageTypes().get(27);
+        internal_static_musica_DeletarMusicaResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_DeletarMusicaResposta_descriptor, new java.lang.String[] { "Resultado" });
+        internal_static_musica_DeletarPlaylistRequisicao_descriptor = getDescriptor().getMessageTypes().get(28);
+        internal_static_musica_DeletarPlaylistRequisicao_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_DeletarPlaylistRequisicao_descriptor, new java.lang.String[] { "Id" });
+        internal_static_musica_DeletarPlaylistResposta_descriptor = getDescriptor().getMessageTypes().get(29);
+        internal_static_musica_DeletarPlaylistResposta_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(internal_static_musica_DeletarPlaylistResposta_descriptor, new java.lang.String[] { "Resultado" });
     }
     // @@protoc_insertion_point(outer_class_scope)
 }
