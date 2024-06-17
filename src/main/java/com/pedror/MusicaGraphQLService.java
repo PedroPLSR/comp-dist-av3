@@ -69,17 +69,17 @@ public class MusicaGraphQLService {
   //Update-------------------------------------------------------------------------------------------------------------
   @Mutation
   @Description("Substitui uma Musica por uma nova - Parametros: Long idMusica: ID da musica a ser atualizada; String nome: Nome da nova musica; String artista: artista da nova musica")
-  public void updateMusica(Long idMusica, String nome, String artista){
+  public void updateMusica(int idMusica, String nome, String artista){
     dados.updateMusica(idMusica, dados.createMusica(nome, artista));
   }
   @Mutation
   @Description("Substitui uma Playlist por uma nova - Parametros: Long idPlaylist: ID da Playlist a ser atualizada; String nome: Nome da nova Playlist; int... idMusicas: lista de musicas da playlist")
-  public void updatePlaylist(Long idPlaylist, String nome, int... idMusicas){
+  public void updatePlaylist(int idPlaylist, String nome, int... idMusicas){
     dados.updatePlaylist(idPlaylist, dados.createPlaylist(nome, idMusicas));
   }
   @Mutation
   @Description("Substitui uma Playlist por uma nova - Parametros: Long idPlaylist: ID da Playlist a ser atualizada; String nome: Nome da nova Playlist; int... idMusicas: lista de musicas da playlist")
-  public void updateUsuario(Long idUsuario, String nome, int idade, int... idPlaylists){
+  public void updateUsuario(int idUsuario, String nome, int idade, int... idPlaylists){
     dados.updateUsuario(idUsuario, dados.createUsuario(nome, idade, idPlaylists));
   }
 
@@ -87,17 +87,17 @@ public class MusicaGraphQLService {
 
   @Mutation
   @Description("Deleta um Usuario")
-  public String deleteUsuario(long idUsuario){
-     return dados.removeUsuario(idUsuario);
+  public String deleteUsuario(int idUsuario){
+     return dados.removeUsuario((long) idUsuario);
   }
   @Mutation
   @Description("Deleta uma Musica")
-  public String deleteMusica(long idMusica){
-     return dados.removeMusica(idMusica);
+  public String deleteMusica(int idMusica){
+     return dados.removeMusica((long) idMusica);
   }
   @Mutation
   @Description("Deleta uma Playlist")
-  public String deletePlaylist(long idPlaylist){
-     return dados.removePlaylist(idPlaylist);
+  public String deletePlaylist(int idPlaylist){
+     return dados.removePlaylist((long) idPlaylist);
   }
 }

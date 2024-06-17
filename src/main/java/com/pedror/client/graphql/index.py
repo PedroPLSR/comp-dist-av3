@@ -8,6 +8,7 @@ class MusicaGraphQLClient:
         self.transport = RequestsHTTPTransport(url=self.url, use_json=True)
         self.client = Client(transport=self.transport, fetch_schema_from_transport=True)
 
+    # printar
     def get_usuarios(self):
         query = gql("""
             query {
@@ -99,6 +100,7 @@ class MusicaGraphQLClient:
             print(f'Erro com status code: {response.status_code}')
             return f'Erro com status code: {response.status_code}'
 
+    # criar
     def create_usuario(self, nome, idade, id_playlists=[]):
         mutation = gql("""
             mutation CreateUsuario($nome: String!, $idade: Int!, $idPlaylists: [Int!]) {
@@ -147,6 +149,74 @@ class MusicaGraphQLClient:
         print("Playlist Criada:", result)
         return result
 
+    # atulizar
+    def update_usuario(self, id_usuario, nome, idade, id_playlists=[]):
+        mutation = gql("""
+            mutation UpdateUsuario($id: Int!, $nome: String!, $idade: Int!, $idPlaylists: [Int!]) {
+                updateUsuario(idUsuario: $id, nome: $nome, idade: $idade, idPlaylists: $idPlaylists)
+            }
+        """)
+        variables = {"id": id_usuario, "nome": nome, "idade": idade, "idPlaylists": id_playlists}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Usuário Atualizado.")
+        return result
+
+    def update_musica(self, id_musica, nome, artista):
+        mutation = gql("""
+            mutation UpdateMusica($id: Int!, $nome: String!, $artista: String!) {
+                updateMusica(idMusica: $id, nome: $nome, artista: $artista)
+            }
+        """)
+        variables = {"id": id_musica, "nome": nome, "artista": artista}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Música Atualizada.")
+        return result
+
+    def update_playlist(self, id_playlist, nome, id_musicas=[]):
+        mutation = gql("""
+            mutation UpdatePlaylist($id: Int!, $nome: String!, $idMusicas: [Int!]) {
+                updatePlaylist(idPlaylist: $id, nome: $nome, idMusicas: $idMusicas)
+            }
+        """)
+        variables = {"id": id_playlist, "nome": nome, "idMusicas": id_musicas}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Playlist Atualizada.")
+        return result
+
+    # deletar
+    def delete_usuario(self, id_usuario):
+        mutation = gql("""
+            mutation DeleteUsuario($id: Int!) {
+                deleteUsuario(idUsuario: $id)
+            }
+        """)
+        variables = {"id": id_usuario}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Usuário Excluído:", result)
+        return result
+
+    def delete_musica(self, id_musica):
+        mutation = gql("""
+            mutation DeleteMusica($id: Int!) {
+                deleteMusica(idMusica: $id)
+            }
+        """)
+        variables = {"id": id_musica}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Música Excluída:", result)
+        return result
+
+    def delete_playlist(self, id_playlist):
+        mutation = gql("""
+            mutation DeletePlaylist($id: Int!) {
+                deletePlaylist(idPlaylist: $id)
+            }
+        """)
+        variables = {"id": id_playlist}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Playlist Excluída:", result)
+        return result
+
 
 client = MusicaGraphQLClient()
 # client.get_musicas()
@@ -158,4 +228,12 @@ client = MusicaGraphQLClient()
 
 # client.create_usuario("Pedro", 20, [1, 2]) # Crie um usuário com idades e playlists FUNCIONA
 #client.create_musica("Música Teste", "Artista Teste") # Crie uma música FUNCIONA
-client.create_playlist("Playlist Teste", [1]) # Crie uma playlist com músicas FUNCIONA
+#client.create_playlist("Playlist muito massa", [2]) # Crie uma playlist com músicas FUNCIONA
+
+#client.update_usuario(1, "Pedro", 21, [1, 2]) # Atualize um usuário FUNCIONA
+#client.update_musica(1, "Música Teste", "Artista Teste") # Atualize uma música FUNCIONA
+# client.update_playlist(1, "Playlist Teste", [1, 2]) # Atualize uma playlist FUNCIONA?
+
+# client.delete_usuario(0) # Exclua um usuário FUNCIONA
+# client.delete_musica(0) # Exclua uma música FUNCIONA
+# client.delete_playlist(0) # Exclua uma playlist FUNCIONA?
