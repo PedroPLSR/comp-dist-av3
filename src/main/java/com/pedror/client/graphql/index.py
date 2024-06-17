@@ -72,7 +72,6 @@ class MusicaGraphQLClient:
         print(f"Musicas da Playlist {id_playlist}:", result)
         return result
 
-
     def get_playlists_com_musica(self, id_musica):
         query = gql("""
             query GetPlaylistsComMusica($idMusica: Int!) {
@@ -100,11 +99,63 @@ class MusicaGraphQLClient:
             print(f'Erro com status code: {response.status_code}')
             return f'Erro com status code: {response.status_code}'
 
+    def create_usuario(self, nome, idade, id_playlists=[]):
+        mutation = gql("""
+            mutation CreateUsuario($nome: String!, $idade: Int!, $idPlaylists: [Int!]) {
+                createUsuario(nome: $nome, idade: $idade, idPlaylists: $idPlaylists) {
+                    id
+                    nome
+                    idade
+                }
+            }
+        """)
+        variables = {"nome": nome, "idade": idade, "idPlaylists": id_playlists}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Usuário Criado:", result)
+        return result
+
+    def create_musica(self, nome, artista):
+        mutation = gql("""
+            mutation CreateMusica($nome: String!, $artista: String!) {
+                createMusica(nome: $nome, artista: $artista) {
+                    id
+                    nome
+                    artista
+                }
+            }
+        """)
+        variables = {"nome": nome, "artista": artista}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Música Criada:", result)
+        return result
+
+    def create_playlist(self, nome, id_musicas=[]):
+        mutation = gql("""
+            mutation CreatePlaylist($nome: String!, $idMusicas: [Int!]) {
+                createPlaylist(nome: $nome, idMusicas: $idMusicas) {
+                    id
+                    nome
+                    musicas {
+                        id
+                        nome
+                    }
+                }
+            }
+        """)
+        variables = {"nome": nome, "idMusicas": id_musicas}
+        result = self.client.execute(mutation, variable_values=variables)
+        print("Playlist Criada:", result)
+        return result
+
+
 client = MusicaGraphQLClient()
-client.get_musicas()
-client.get_usuarios()
-# Você pode descomentar as chamadas abaixo para ver mais saídas
-client.get_playlists_do_usuario(1)
-client.get_musicas_da_playlist(1)
-client.get_playlists_com_musica(1)
-# client.get_playlets_com_musirs_comuasi
+# client.get_musicas()
+# client.get_usuarios()
+# # Você pode descomentar as chamadas abaixo para ver mais saídas
+# client.get_playlists_do_usuario(1)
+# client.get_musicas_da_playlist(1)
+# client.get_playlists_com_musica(1)
+
+# client.create_usuario("Pedro", 20, [1, 2]) # Crie um usuário com idades e playlists FUNCIONA
+#client.create_musica("Música Teste", "Artista Teste") # Crie uma música FUNCIONA
+client.create_playlist("Playlist Teste", [1]) # Crie uma playlist com músicas FUNCIONA
