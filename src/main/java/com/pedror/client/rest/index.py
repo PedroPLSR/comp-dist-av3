@@ -1,3 +1,6 @@
+import time
+import sys
+import json
 import requests
 
 class MusicaRestClient:
@@ -29,6 +32,20 @@ class MusicaRestClient:
         return requests.post(url=f'{self.url}/criarMusica', json=body, headers=self.headers).json()
 
     #lista
+    # def listarUsuarios(self):
+    #     start_time = time.time()
+    #     response = requests.get(url=f'{self.url}/usuarios')
+    #     end_time = time.time()
+    #
+    #     response_time = (end_time - start_time) * 1000  # Tempo de resposta em milissegundos
+    #     request_size = sys.getsizeof(json.dumps({"url": f'{self.url}/usuarios'}))  # Tamanho estimado da requisição
+    #
+    #     # Salva no CSV
+    #     with open('rest_performance.csv', 'a') as file:
+    #         file.write(f"listarUsuarios,{response_time},{request_size}\n")
+    #
+    #     return response.json()
+
     def listarUsuarios(self):
         return requests.get(url=f'{self.url}/usuarios').json()
 
@@ -80,5 +97,10 @@ class MusicaRestClient:
 
 
 client = MusicaRestClient()
-print(client.listarUsuarios())
+# print(client.listarUsuarios())
 # print(client.listarMusicas())
+
+# Executa e mede desempenho ao listar usuários
+if __name__ == "__main__":
+    client = MusicaRestClient()
+    print(client.listarUsuarios())  # Chamada da função de teste

@@ -1,3 +1,4 @@
+const fs = require('fs');
 const soap = require('soap');
 const url = 'http://localhost:8080/soap/musica?wsdl';
 
@@ -191,3 +192,37 @@ const playlistAtualizada = {
 // deletarCliente(2);
 // deletarMusica(2);
 // deletarPlaylist(3);
+
+const csvFile = 'soap_performance.csv';
+fs.writeFileSync(csvFile, 'operation,response_time_ms,request_size_bytes\n');
+
+function measureSoapCall(operationName, action) {
+    const requestSize = Buffer.byteLength(JSON.stringify({}));  // {} representa o argumento vazio para getUsuarios
+    const startTime = Date.now();
+
+    soap.createClient(url, (err, client) => {
+        if (err) {
+            console.error(`Erro ao criar cliente SOAP para ${operationName}:`, err);
+            return;
+        }
+        action(client, (error, result) => {
+            const responseTime = Date.now() - startTime;
+            if (error) {
+                console.error(`Erro ao executar ${operationName}:`, error);
+                return;
+            }
+            console.log(`${operationName} resposta:`, result);
+            fs.appendFileSync(csvFile, `${operationName},${responseTime},${requestSize}\n`);
+        });
+    });
+}
+
+// Função para chamar getUsuarios e medir desempenho
+function getUsuarios() {
+    measureSoapCall('getUsuarios', (client, callback) => {
+        client.getUsuarios({}, callback);
+    });
+}
+
+// Chamar a função de medição
+getUsuarios();

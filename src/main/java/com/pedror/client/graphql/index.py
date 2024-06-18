@@ -1,4 +1,7 @@
 import requests
+import json
+import time
+import sys
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
 
@@ -9,6 +12,33 @@ class MusicaGraphQLClient:
         self.client = Client(transport=self.transport, fetch_schema_from_transport=True)
 
     # printar
+
+    # def get_usuarios(self):
+    #     query = gql("""
+    #         query {
+    #             usuarios {
+    #                 id
+    #                 nome
+    #                 idade
+    #                 playlists {
+    #                     id
+    #                     nome
+    #                 }
+    #             }
+    #         }
+    #     """)
+    #     start_time = time.time()  # Inicia a medição do tempo
+    #     result = self.client.execute(query)
+    #     end_time = time.time()  # Finaliza a medição do tempo
+    #     response_time = (end_time - start_time) * 1000  # Tempo de resposta em milissegundos
+    #     request_size = sys.getsizeof(json.dumps({"query": str(query)}))  # Tamanho aproximado da requisição
+    #
+    #     # Armazenamento dos dados em um arquivo CSV
+    #     with open('graphql_performance.csv', 'a') as file:
+    #         file.write(f"getUsuarios,{response_time},{request_size}\n")
+    #
+    #     print("Usuarios:", result)
+
     def get_usuarios(self):
         query = gql("""
             query {
@@ -220,7 +250,7 @@ class MusicaGraphQLClient:
 
 client = MusicaGraphQLClient()
 # client.get_musicas()
-# client.get_usuarios()
+client.get_usuarios()
 # # Você pode descomentar as chamadas abaixo para ver mais saídas
 # client.get_playlists_do_usuario(1)
 # client.get_musicas_da_playlist(1)
@@ -237,3 +267,14 @@ client = MusicaGraphQLClient()
 # client.delete_usuario(0) # Exclua um usuário FUNCIONA
 # client.delete_musica(0) # Exclua uma música FUNCIONA
 # client.delete_playlist(0) # Exclua uma playlist FUNCIONA?
+
+
+
+# Medição de desempenho
+
+# if __name__ == "__main__":
+#     with open('graphql_performance.csv', 'w') as file:
+#         file.write('operation,response_time_ms,request_size_bytes\n')  # Isso escreve o cabeçalho do CSV
+#
+#     client = MusicaGraphQLClient()
+#     client.get_usuarios()  # Executa a função get_usuarios para medir a performance

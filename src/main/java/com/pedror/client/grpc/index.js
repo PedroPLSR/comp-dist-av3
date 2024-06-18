@@ -1,3 +1,4 @@
+const fs = require('fs');  // Adiciona esta linha no topo do seu arquivo
 const path = require('path');
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
@@ -185,7 +186,7 @@ function deletarPlaylist(id) {
 }
 
 // console.log(client)
-// getUsuarios();
+getUsuarios();
 // getMusicas();
 // getPlaylistsDoUsuario(3); // Substitua 1 pelo ID de um usuário existente
 // getMusicasDaPlaylist(3); // Substitua 1 pelo ID de uma playlist existente
@@ -198,3 +199,29 @@ function deletarPlaylist(id) {
 // deletarUsuario(1); // Substitua 1 pelo ID do usuário que deseja deletar
 // deletarMusica(2); // Substitua 2 pelo ID da música que deseja deletar
 // deletarPlaylist(3); // Substitua 3 pelo ID da playlist que deseja deletar
+
+const csvFile = 'grpc_performance.csv';
+fs.writeFileSync(csvFile, 'operation,response_time_ms,request_size_bytes\n');
+
+function measureGrpcCall(operationName, request, grpcFunction) {
+    const startTime = Date.now();
+    const requestSize = Buffer.byteLength(JSON.stringify(request));
+
+    grpcFunction(request, (error, response) => {
+        const responseTime = Date.now() - startTime;
+        const logEntry = `${operationName},${responseTime},${requestSize}\n`;
+        fs.appendFileSync(csvFile, logEntry);
+
+        if (error) {
+            console.error(`Erro ao executar ${operationName}:`, error);
+            return;
+        }
+        console.log(`${operationName} resposta:`, response);
+    });
+}
+
+function getUsuarios() {
+    measureGrpcCall('getUsuarios', {}, client.getUsuarios.bind(client));
+}
+
+getUsuarios()

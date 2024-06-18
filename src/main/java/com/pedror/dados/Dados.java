@@ -23,7 +23,7 @@ public class Dados {
     long idUsuario = 0;
     long idMusica = 0;
     long idPlaylist = 0;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 1000; i++) {
       Usuario usuario = new Usuario();
       usuario.setId(idUsuario++);
       usuario.setNome(faker.name().fullName());

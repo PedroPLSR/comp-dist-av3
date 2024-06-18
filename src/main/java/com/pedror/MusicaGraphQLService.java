@@ -40,31 +40,26 @@ public class MusicaGraphQLService {
   public List<Usuario> getUsuarios() {
     return dados.getUsuarios();
   }
-
   @Query
   @Description("Retorna todas as músicas.")
   public List<Musica> getMusicas() {
     return dados.getMusicas();
   }
-
   @Query
   @Description("Retorna todas as playlists de um usuário.")
   public List<Playlist> getPlaylistsDoUsuario(int idUsuario) {
     return dados.getPlaylistsDoUsuario((long) idUsuario);
   }
-
   @Query
   @Description("Retorna todas as músicas de uma playlist.")
   public List<Musica> getMusicasDaPlaylist(int idPlaylist) {
     return dados.getMusicasDaPlaylist((long) idPlaylist);
   }
-
   @Query
   @Description("Retorna todas as playlists que contêm uma música.")
   public List<Playlist> getPlaylistsComMusica(int idMusica) {
     return dados.getPlaylistsComMusica((long) idMusica);
   }
-
 
   //Update-------------------------------------------------------------------------------------------------------------
   @Mutation
