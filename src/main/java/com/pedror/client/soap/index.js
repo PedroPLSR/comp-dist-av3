@@ -177,12 +177,11 @@ const playlistAtualizada = {
 };
 
 
-// Testando as funções
 // getUsuarios();
 // getMusicas();
-// getPlaylistsDoUsuario(2); // Use um ID válido
-// getMusicasDaPlaylist(3); // Use um ID válido
-// getPlaylistsComMusica(5); // Use um ID válido
+// getPlaylistsDoUsuario(2);
+// getMusicasDaPlaylist(3);
+// getPlaylistsComMusica(5);
 // criarUsuario(novoUsuario);
 // criarMusica(novaMusica);
 // criarPlaylist(novaPlaylist);

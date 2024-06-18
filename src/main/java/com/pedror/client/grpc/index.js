@@ -19,7 +19,6 @@ const client = new musicaProto.MusicaService('localhost:9000', grpc.credentials.
 
 
 
-// Função para obter todos os usuários
 function getUsuarios() {
     client.getUsuarios({}, (error, response) => {
         if (error) {
@@ -186,7 +185,7 @@ function deletarPlaylist(id) {
 }
 
 // console.log(client)
-getUsuarios();
+// getUsuarios();
 // getMusicas();
 // getPlaylistsDoUsuario(3); // Substitua 1 pelo ID de um usuário existente
 // getMusicasDaPlaylist(3); // Substitua 1 pelo ID de uma playlist existente

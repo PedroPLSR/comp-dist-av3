@@ -250,23 +250,22 @@ class MusicaGraphQLClient:
 
 client = MusicaGraphQLClient()
 # client.get_musicas()
-client.get_usuarios()
-# # Você pode descomentar as chamadas abaixo para ver mais saídas
+# client.get_usuarios()
 # client.get_playlists_do_usuario(1)
 # client.get_musicas_da_playlist(1)
 # client.get_playlists_com_musica(1)
 
-# client.create_usuario("Pedro", 20, [1, 2]) # Crie um usuário com idades e playlists FUNCIONA
-#client.create_musica("Música Teste", "Artista Teste") # Crie uma música FUNCIONA
-#client.create_playlist("Playlist muito massa", [2]) # Crie uma playlist com músicas FUNCIONA
+# client.create_usuario("Pedro", 20, [1, 2])
+#client.create_musica("Música Teste", "Artista Teste")
+#client.create_playlist("Playlist muito massa", [2])
 
-#client.update_usuario(1, "Pedro", 21, [1, 2]) # Atualize um usuário FUNCIONA
-#client.update_musica(1, "Música Teste", "Artista Teste") # Atualize uma música FUNCIONA
-# client.update_playlist(1, "Playlist Teste", [1, 2]) # Atualize uma playlist FUNCIONA?
+#client.update_usuario(1, "Pedro", 21, [1, 2])
+#client.update_musica(1, "Música Teste", "Artista Teste")
+# client.update_playlist(1, "Playlist Teste", [1, 2])
 
-# client.delete_usuario(0) # Exclua um usuário FUNCIONA
-# client.delete_musica(0) # Exclua uma música FUNCIONA
-# client.delete_playlist(0) # Exclua uma playlist FUNCIONA?
+# client.delete_usuario(0)
+# client.delete_musica(0)
+# client.delete_playlist(0)
 
 
 

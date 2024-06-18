@@ -8,7 +8,6 @@ class MusicaRestClient:
         self.url = 'http://localhost:8080/rest/musica'
         self.headers = {'Content-Type': 'application/json'}
 
-    # Cria
     def criaUsuario(self, nome, idade, IdPlaylists):
         body = {
             'nome': nome,
