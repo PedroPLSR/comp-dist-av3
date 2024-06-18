@@ -17,11 +17,15 @@ public class Dados {
 
   private final List<Musica> musicas = new ArrayList<>();
 
+
   public Dados() {
     Faker faker = new Faker();
+    long idUsuario = 0;
+    long idMusica = 0;
+    long idPlaylist = 0;
     for (int i = 0; i < 10; i++) {
       Usuario usuario = new Usuario();
-      usuario.setId((long) i);
+      usuario.setId(idUsuario++);
       usuario.setNome(faker.name().fullName());
       usuario.setIdade(faker.number().numberBetween(18, 60));
       usuario.setPlaylists(new ArrayList<>());
@@ -29,12 +33,12 @@ public class Dados {
       //Usuário criado --------------------
       for (int j = 0; j < 5; j++) {
         Playlist playlist = new Playlist();
-        playlist.setId((long) (i*10 + j));
+        playlist.setId(idPlaylist++);
         playlist.setNome(faker.music().genre());
         playlist.setMusicas(new ArrayList<>());
         for (int k = 0; k < 10; k++) { // Cria 10 musicas novas e coloca em uma playlist
           Musica musica = new Musica();
-          musica.setId((long) (i*10 + j*5 + k));
+          musica.setId(idMusica++);
           musica.setNome(faker.music().instrument());
           musica.setArtista(faker.artist().name());
           playlist.getMusicas().add(musica); //adiciona a musica criada na playlist atual

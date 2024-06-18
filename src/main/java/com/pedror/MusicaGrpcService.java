@@ -141,47 +141,94 @@ public class MusicaGrpcService implements MusicaService {
 
   @Override
   public Uni<CriarUsuarioResposta> criarUsuario(CriarUsuarioRequisicao request) {
-    return null;
+    Usuario usuarioCriado = dados.createUsuario(
+            request.getNome(),
+            request.getIdade(),
+            request.getIdPlaylistsList().stream().mapToInt(i -> i).toArray()
+    );
+    UsuarioGrpc usuarioGrpc = GrpcUtil.toUsuarioGrpc(usuarioCriado);
+    return Uni.createFrom().item(CriarUsuarioResposta.newBuilder().setUsuario(usuarioGrpc).build());
   }
 
   @Override
   public Uni<CriarMusicaResposta> criarMusica(CriarMusicaRequisicao request) {
-    return null;
+    Musica musicaCriada = dados.createMusica(
+            request.getNome(),
+            request.getArtista()
+    );
+    MusicaGrpc musicaGrpc = GrpcUtil.toMusicaGrpc(musicaCriada);
+    return Uni.createFrom().item(CriarMusicaResposta.newBuilder().setMusica(musicaGrpc).build());
   }
 
   @Override
   public Uni<CriarPlaylistResposta> criarPlaylist(CriarPlaylistRequisicao request) {
-    return null;
+    Playlist playlistCriada = dados.createPlaylist(
+            request.getNome(),
+            request.getIdMusicasList().stream().mapToInt(i -> i).toArray()
+    );
+    PlaylistGrpc playlistGrpc = GrpcUtil.toPlaylistGrpc(playlistCriada);
+    return Uni.createFrom().item(CriarPlaylistResposta.newBuilder().setPlaylist(playlistGrpc).build());
   }
 
   @Override
   public Uni<AtualizarUsuarioResposta> atualizarUsuario(AtualizarUsuarioRequisicao request) {
-    return null;
+    Usuario usuarioAtualizado = new Usuario();
+    usuarioAtualizado.setNome(request.getNome());
+    usuarioAtualizado.setIdade(request.getIdade());
+    List<Playlist> playlists = new ArrayList<>();
+    for (int id : request.getIdPlaylistsList()) {
+      playlists.add(dados.getPlaylists().stream().filter(p -> p.getId() == id).findFirst().orElse(null));
+    }
+    usuarioAtualizado.setPlaylists(playlists);
+    dados.updateUsuario(request.getId(), usuarioAtualizado);
+
+    UsuarioGrpc usuarioGrpc = GrpcUtil.toUsuarioGrpc(usuarioAtualizado);
+    return Uni.createFrom().item(AtualizarUsuarioResposta.newBuilder().setUsuario(usuarioGrpc).build());
   }
 
   @Override
   public Uni<AtualizarMusicaResposta> atualizarMusica(AtualizarMusicaRequisicao request) {
-    return null;
+    Musica musicaAtualizada = new Musica();
+    musicaAtualizada.setNome(request.getNome());
+    musicaAtualizada.setArtista(request.getArtista());
+    dados.updateMusica(request.getId(), musicaAtualizada);
+
+    MusicaGrpc musicaGrpc = GrpcUtil.toMusicaGrpc(musicaAtualizada);
+    return Uni.createFrom().item(AtualizarMusicaResposta.newBuilder().setMusica(musicaGrpc).build());
   }
 
   @Override
   public Uni<AtualizarPlaylistResposta> atualizarPlaylist(AtualizarPlaylistRequisicao request) {
-    return null;
+    List<Musica> musicas = new ArrayList<>();
+    for (int id : request.getIdMusicasList()) {
+      musicas.add(dados.getMusicas().stream().filter(m -> m.getId() == id).findFirst().orElse(null));
+    }
+
+    Playlist playlistAtualizada = new Playlist();
+    playlistAtualizada.setNome(request.getNome());
+    playlistAtualizada.setMusicas(musicas);
+    dados.updatePlaylist(request.getId(), playlistAtualizada);
+
+    PlaylistGrpc playlistGrpc = GrpcUtil.toPlaylistGrpc(playlistAtualizada);
+    return Uni.createFrom().item(AtualizarPlaylistResposta.newBuilder().setPlaylist(playlistGrpc).build());
   }
 
   @Override
   public Uni<DeletarUsuarioResposta> deletarUsuario(DeletarUsuarioRequisicao request) {
-    return null;
+    String resultado = dados.removeUsuario(request.getId());
+    return Uni.createFrom().item(DeletarUsuarioResposta.newBuilder().setResultado(resultado).build());
   }
 
   @Override
   public Uni<DeletarMusicaResposta> deletarMusica(DeletarMusicaRequisicao request) {
-    return null;
+    String resultado = dados.removeMusica(request.getId());
+    return Uni.createFrom().item(DeletarMusicaResposta.newBuilder().setResultado(resultado).build());
   }
 
   @Override
   public Uni<DeletarPlaylistResposta> deletarPlaylist(DeletarPlaylistRequisicao request) {
-    return null;
+    String resultado = dados.removePlaylist(request.getId());
+    return Uni.createFrom().item(DeletarPlaylistResposta.newBuilder().setResultado(resultado).build());
   }
 
 }

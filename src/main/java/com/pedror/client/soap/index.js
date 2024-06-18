@@ -1,5 +1,5 @@
 const soap = require('soap');
-const url = 'http://localhost:8080/soap/musica?wsdl'; // Modifique com o URL correto do WSDL
+const url = 'http://localhost:8080/soap/musica?wsdl';
 
 function getUsuarios() {
     soap.createClient(url, function(err, client) {
@@ -143,6 +143,8 @@ function deletarPlaylist(idPlaylist) {
     });
 }
 
+
+// Dados de exemplo
 const novoUsuario = {
     nome: "Novo Usuário",
     idade: 30
